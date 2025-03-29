@@ -279,3 +279,30 @@
     <!--引用外部图片-->
     <img src="https://img2.baidu.com/it/u=3724265679,1678217865&fm=26&fmt=auto&gp=0.jpg" alt="iu" height="256px"/>
   ```
+
+## meta标签
+
+* charset
+  * 设置网页的字符集
+  ```html
+    <meta charset="UTF-8">
+  ```
+* keywords
+  * 设置网页的关键字
+  ```html
+    <meta name="keywords" content="HTML5,JavaScript,前端，Java">
+  ```
+* description
+  * 设置网页的描述
+  ```html
+    <<meta name="description" content="发布h5、js等前端相关信息">
+  ```
+* 搜索引擎在检索页面时，会同时检索页面的关键词和描述，但是这两个值不会影响页面在搜索引擎中的排名
+* refresh（刷新）
+  * 刷新/请求重定向
+  ```html
+    <!--页面3秒后自动刷新-->
+    <meta http-equiv="refresh" content="3;url=index.html"/>
+    <!--请求重定向，5秒后打开某网址-->
+    <meta http-equiv="refresh" content="5;url=https://www.baidu.com">
+  ```
