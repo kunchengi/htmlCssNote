@@ -306,3 +306,55 @@
     <!--请求重定向，5秒后打开某网址-->
     <meta http-equiv="refresh" content="5;url=https://www.baidu.com">
   ```
+
+## 布局标签
+
+* header
+  * 网页头部
+  ```html
+    <header></header>
+  ```
+* main
+  * 网页的主体部分
+  * 一个页面中只能有一个main
+  ```html
+    <main></main>
+  ```
+* footer
+  * 网页的底部
+  ```html
+    <footer></footer>
+  ```
+* nav
+  * 网页的导航栏
+  ```html
+    <nav></nav>
+  ```
+* aside
+  * 网页的侧边栏
+  ```html
+    <aside></aside>
+  ```
+* article
+  * 网页的文章
+  ```html
+    <article></article>
+  ```
+* section
+  * 独立的区块
+  ```html
+    <section></section>
+  ```
+* div
+  * 没有语义，一个块
+  * 目前主要的布局元素
+  * 可以代替上边的所有
+  ```html
+    <div></div>
+  ```
+* center
+  * 居中
+  * 已过时，一般用css实现
+  ```html
+    <center><p>居中显示</p></center>
+  ```
