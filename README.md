@@ -420,3 +420,80 @@
     </body>
   ```
   ![超链接](images/超链接.png)
+
+# CSS简介
+
+* 层叠样式表
+* CSS可以用来为网页创建样式表，通过样式表对网页进行装饰
+* 层叠是将整个网页想象成一层一层的结构，层次高的将会覆盖层低的
+* CSS可以为网页的各个层次设置样式
+
+## 内联样式
+
+* 将CSS样式写到元素的style属性当中
+* 内联样式只对当前的元素中的内容起作用
+* 内联样式不方便样式复用
+* 属于结构与表现耦合，不方便后期维护
+* 不推荐使用
+  ```html
+    <p style="color: rebeccapurple;font-size: 30px">锄禾日当午，汗滴禾下土</p>
+  ```
+
+## 内部样式
+* 将CSS样式写到head标签中的style标签中
+* 通过CSS选择器选中指定元素
+* 可以同时为这些元素设置样式，使样式进一步复用
+* 可以使表现和结构进一步分离
+* 推荐的一种使用方式
+  ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>Title</title>
+          <style type="text/css">
+              p{
+                  color: rebeccapurple;
+                  font-size: 30px;
+              }
+          </style>
+      </head>
+      <body>
+          <p>锄禾日当午，汗滴禾下土</p>
+          <p>谁之盘中餐，粒粒皆辛苦</p>
+      </body>
+    </html>
+  ```
+  ![内部样式](images/内部样式.png)
+
+## 外部样式
+
+* 将CSS样式编写到外部CSS文件中
+* 步骤
+  * 创建一个CSS文件，文件后缀名为.css
+  * 编写CSS样式
+  ```css
+    p{
+        color: rebeccapurple;
+        font-size: 30px;
+    }
+  ```
+  * 在HTML文件中通过link标签引入CSS文件
+  ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>Title</title>
+          <link rel="stylesheet" href="css/style.css"/>
+      </head>
+      <body>
+          <p>锄禾日当午，汗滴禾下土</p>
+          <p>谁之盘中餐，粒粒皆辛苦</p>
+      </body>
+    </html>
+  ```
+* 可以完全使结构和表现分离，使样式表在不同的页面中使用，最大限度的使样式进行复用
+* 将样式统一写在CSS文件中，然后通过link标签引入，可以利用浏览器的缓存，加快用户访问的速度，提高了用户体验。
+* 最推荐使用
+
