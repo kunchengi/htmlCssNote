@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            color: rebeccapurple;
+        }
+
+        p {
+            color: rebeccapurple;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        #p1 {
+            color: black;
+        }
+
+        .p2 {
+            color: black;
+        }
+
+        .hello {
+            color: rebeccapurple;
+        }
+
+        #p1,
+        .p2 {
+            color: rebeccapurple;
+        }
+
+        span.p2 {
+            color: red;
+        }
+
+        #d1 span {
+            color: aqua;
+        }
+
+        #d1 p span {
+            color: rebeccapurple;
+        }
+
+        #d1>span {
+            color: red;
+        }
+
+        a:link {
+            color: aqua;
+        }
+
+        a:visited {
+            color: brown;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        button:active {
+            color: red;
+        }
+
+        input:focus {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        p::selection {
+            background-color: burlywood;
+        }
+
+        p::-moz-selection {
+            background-color: burlywood;
+        }
+        p{
+            width: 50px;
+        }
+        p:first-letter{
+            color: red;
+            font-size: 20px;
+        }
+        p:first-line{
+            background-color: burlywood;
+        }
+        p:before{
+            content: "前面";
+            color: rebeccapurple;
+        }
+        p:after{
+            content: "后面";
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>悯农</h1>
+    <p class="p2">锄禾日当午</p>
+    <p id="p1">汗滴禾下土</p>
+    <p class="p2 hello">谁之盘中餐</p>
+    <span class="p2">粒粒皆辛苦</span>
+    <div id="d1">
+        我是div标签
+        <span>我是div标签中的span</span>
+        <p>
+            <span>我是p标签中的span</span>
+        </p>
+    </div>
+    <div>
+        <span>外面的span</span>
+    </div>
+    <a href="https://www.baidu.com">访问过的链接</a>
+    <a href="https://xxt.com/">没访问过的链接</a>
+    <button>按钮</button>
+    <input type="text">
+    <p>这是一个p标签</p>
+</body>
+
+</html>
