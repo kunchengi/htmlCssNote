@@ -883,59 +883,7 @@
 * `<code>`
   * 代码标签
   * 表示一段代码
-  ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-        <style type="text/css">
-
-        </style>
-    </head>
-    <body>
-        <p>今天天气<em>真不错</em></p>
-        <p><strong>注意：请不要靠近</strong></p>
-        <p>
-            <i>我是i标签的内容</i>
-            <b>我是b标签的内容</b>
-        </p>
-        <p>
-            我是p标签的内容
-            <small>我是small标签的内容</small>
-        </p>
-        <p>
-            <cite>《论语》</cite>真不错
-        </p>
-        <p>
-            子曰：<q>学而时习之，不亦说乎</q>
-        </p>
-        <p>
-            子曰：<blockquote>学而时习之，不亦说乎</blockquote>
-        </p>
-        <P>2<sup>2</sup></P>
-        <P>H<sub>2</sub>O</P>
-        <p>
-            <del>17.75</del>
-            <br/>
-            15.54
-        </p>
-        <p>
-            11+11=<ins>22</ins>
-        </p>
-        <pre>
-            <code>
-            window.onload = function () {
-                alert("hello");
-            }
-            </code>
-        </pre>
-    </body>
-    <script type="text/javascript">
-
-    </script>
-    </html>
-  ```
+  [文本标签](文本标签.html)
   ![文本标签](images/文本标签.png)
 
 # 列表
@@ -1064,3 +1012,60 @@
     </ul>
    ```
    ![列表的嵌套](images/列表的嵌套.png)
+
+# 长度单位
+* px
+  * 像素
+  * 最常用的单位
+  * 不同的显示器一个像素的大小也不同，显示效果越好越清晰，像素点越小，反之像素点越大
+* %
+  * 百分比
+  * 相对于父元素的宽度或高度的百分比
+  * 当父元素值发生变化时子元素也会等比例变化
+  * 创建自适应页面时经常使用百分比作为单位
+* em
+  * 相对于自身元素的字体大小来计算
+  * 1em = 1font-size
+  * 当字体大小发生改变，em也会随之改变
+  * 设置字体相关的样式时使用
+* rem
+  * 相对于根元素的字体大小来计算
+[长度单位](长度单位.html)
+![长度单位](images/长度单位.png)
+
+# 颜色单位
+## 单词
+* red 红色
+* blue 蓝色
+* green 绿色
+* 等
+
+## RGB
+* RGB指的是Red Green Blue三原色
+  * 通过这三种颜色的不同浓度，来表示不同的颜色
+  * 语法：
+    * rgb(红色浓度,绿色浓度,蓝色浓度)
+    * 浓度范围：0-255
+    * 浓度也可以采用百分数表示
+
+## RGBA
+* 在RGB的基础上增加一个a表示不透明度
+* 需要四个值，前三个和rgb一样，第四个表示不透明度
+* 不透明度的范围：0-1
+
+## 十六进制
+* 与RGB原理一样
+* 使用三组两位的十六进制数组表示一个颜色
+* 每组取00~ff
+* 语法
+  * #rrggbb
+* 两位重复的颜色可以简写，如#ff0000可写成#f00
+
+## HSL和HSLA
+* HSL指的是Hue(色相)，Saturation(饱和度)，Lightness(亮度)
+* 色相：0-360
+* 饱和度：0-100%
+* 亮度：0-100%
+* 语法
+  * hsl(色相,饱和度,亮度)
+  * hsla(色相,饱和度,亮度,不透明度)
