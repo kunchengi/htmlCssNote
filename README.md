@@ -834,3 +834,233 @@
   * :visited
   * :hover
   * :active
+
+# 文本标签
+
+* `<em>`
+  * 斜体
+  * 用于表示强调的内容
+  * 有语义
+* `<strong>`
+  * 加粗
+  * 用于表示重要的内容
+  * 有语义
+* `<i>`
+  * 斜体
+  * 用于表示斜体的内容
+  * 无语义
+* `<b>`
+  * 加粗
+  * 用于表示加粗的内容
+  * 无语义
+* `<small>`
+  * 比父元素字号小一些
+  * 表示一类细则内容
+  * 如：合同中小字、网站版权声明等
+* `<cite>`
+  * 表示参考内容
+  * 如：书名、歌曲名、电影名等
+* `<q>`
+  * 引号
+  * 短引用（行内引用）
+  * 引号不能被选中
+* `<blockquote>`
+  * 长引用（块级引用）
+* `<sup>`
+  * 上标
+  * 如：2的9次方
+* `<sub>`
+  * 下标
+* `<ins>`
+  * 下划线
+  * 表示插入的内容
+* `<del>`
+  * 删除线
+  * 表示删除的内容
+* `<pre>`
+  * 预格式标签
+  * 保留代码原格式
+* `<code>`
+  * 代码标签
+  * 表示一段代码
+  ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <p>今天天气<em>真不错</em></p>
+        <p><strong>注意：请不要靠近</strong></p>
+        <p>
+            <i>我是i标签的内容</i>
+            <b>我是b标签的内容</b>
+        </p>
+        <p>
+            我是p标签的内容
+            <small>我是small标签的内容</small>
+        </p>
+        <p>
+            <cite>《论语》</cite>真不错
+        </p>
+        <p>
+            子曰：<q>学而时习之，不亦说乎</q>
+        </p>
+        <p>
+            子曰：<blockquote>学而时习之，不亦说乎</blockquote>
+        </p>
+        <P>2<sup>2</sup></P>
+        <P>H<sub>2</sub>O</P>
+        <p>
+            <del>17.75</del>
+            <br/>
+            15.54
+        </p>
+        <p>
+            11+11=<ins>22</ins>
+        </p>
+        <pre>
+            <code>
+            window.onload = function () {
+                alert("hello");
+            }
+            </code>
+        </pre>
+    </body>
+    <script type="text/javascript">
+
+    </script>
+    </html>
+  ```
+  ![文本标签](images/文本标签.png)
+
+# 列表
+
+## 无序列表
+* 无序列表使用ul标签来定义
+* 每个列表项使用li标签来定义
+* 列表项前面会显示一个小的蓝色的圆点
+* 无序列表的语法
+  ```html
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+    </ul>
+  ```
+* 小圆圈的类型可以通过list-style-type属性来修改
+  * disc
+    * 默认值，蓝色实心圆点
+  * circle
+    * 黑色空心的圆点
+  * square
+    * 实心方块
+  * none
+    * 不显示列表项前面的小圆圈
+  ```css
+    ul{
+        list-style-type: disc;
+    }
+  ```
+* 小圆圈的位置可以通过list-style-position属性来修改
+  * outside
+    * 默认值，列表项前面的小圆圈会显示在列表项的外面
+  * inside
+    * 列表项前面的小圆圈会显示在列表项的里面
+  ```css
+    ul{
+        list-style-position: outside;
+    }
+  ```
+* 可以通过list-style-image属性将小圆圈替换为一个图片
+  * url(图片路径)
+    * 显示一个小的图片
+  ```css
+    ul{
+        list-style-image: url(images/1.png);
+    }
+  ```
+
+## 有序列表
+* 有序列表使用ol标签来定义
+* 每个列表项使用li标签来定义
+* 列表项前面会显示一个数字
+* 有序列表的语法
+  ```html
+    <ol><!--有序列表,默认1234-->
+        <li>苹果</li><!--列表项-->
+        <li>橘子</li>
+        <li>香蕉</li>
+    </ol>
+  ```
+* 数字的类型可以通过list-style-type属性来修改
+  * decimal
+    * 默认值，数字
+  * decimal-leading-zero
+    * 数字前面会显示0
+  * lower-alpha
+    * 小写字母
+  * upper-alpha
+    * 大写字母
+  * lower-roman
+    * 小写罗马数字
+  * upper-roman
+    * 大写罗马数字
+  * none
+    * 不显示列表项前面的数字
+    ```css
+      ol{
+          list-style-type: decimal;
+      }
+    ```
+    ![有序列表](images/有序列表.png)
+
+## 自定义列表
+* 自定义列表使用dl标签来定义
+* 每个列表项使用dt标签来定义
+* 每个列表项的描述使用dd标签来定义
+* 自定义列表的语法
+  ```html
+    <dl>
+        <dt>武松</dt>
+        <dd>打老虎很厉害</dd>
+        <dt>许嵩</dt>
+        <dd>写歌很厉害</dd>
+        <dt>松鼠</dt>
+        <dd>吃坚果很厉害</dd>
+    </dl>
+  ```
+   ![自定义列表](images/自定义列表.png)
+
+## 列表的嵌套
+* ul，ol，dl列表之间可以互相嵌套
+   ```html
+    <ul><!--无序列表，默认圆点-->
+        <li>水果</li><!--列表项-->
+        <ol><!--嵌套列表-->
+            <li>苹果</li><!--列表项-->
+            <li>橘子</li>
+            <li>香蕉</li>
+        </ol>
+        <li>动物</li>
+        <ul><!--嵌套列表-->
+            <li>猫</li><!--列表项-->
+            <li>狗</li>
+            <li>猪</li>
+            <li>鱼</li>
+        </ul>
+        <dl>
+            <dt>武松</dt>
+            <dd>打老虎很厉害</dd>
+            <dt>许嵩</dt>
+            <dd>写歌很厉害</dd>
+            <dt>松鼠</dt>
+            <dd>吃坚果很厉害</dd>
+        </dl>
+    </ul>
+   ```
+   ![列表的嵌套](images/列表的嵌套.png)
