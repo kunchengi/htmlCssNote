@@ -1069,3 +1069,192 @@
 * 语法
   * hsl(色相,饱和度,亮度)
   * hsla(色相,饱和度,亮度,不透明度)
+
+# 字体
+
+## 属性
+
+* color
+  * 字体颜色
+  * 可以使用单词，rgb，rgba，十六进制，hsl，hsla等
+  ```css
+    color: red;
+  ```
+* font-size
+  * 字体大小
+  * 浏览器一般默认的文字大小都是16px
+  * 设置的并不是文字本身的大小
+  * 在页面中，每个文字都是放在一个看不见的格子中
+  * 设置的font-size实际上是设置格的高度
+  * 一般情况文字实际大小要比格子小
+  * 根据字体的不同，显示效果也不同
+  * 浏览器最小字体大写是12px
+  ```css
+    font-size: 16px;
+  ```
+* font-family
+  * 字体
+  * 当浏览器支持则使用该字体
+  * 如果浏览器不支持则使用默认字体
+  * 同时指定多个字体，多个字体之间使用,分开，当采用多个字体时，浏览器会优先使用前边的字体，如果前边不支持，再逐一使用后边的字体
+  * 浏览器使用的字体就是用户计算机的字体
+  * 在开发中尽量不要用不常用的字体
+  ```css
+    font-family: "宋体", "微软雅黑", "黑体";
+  ```
+* font-style
+  * 字体样式
+  * normal 正常
+  * italic 斜体
+  * oblique 倾斜
+  * inherit 继承父元素的字体样式
+  ```css
+    font-style: normal;
+  ```
+* font-weight
+  * 字体粗细
+  * normal 正常
+  * bold 加粗
+  * bolder 更粗
+  * lighter 更细
+  * inherit 继承父元素的字体粗细
+  * 100-900
+    * 数字越大越粗
+    * 400是正常
+    * 由于用户计算机没有这么多级别的字体，所以不能达到我们想要的效果，一般不使用
+  ```css
+    font-weight: normal;
+  ```
+* font-variant
+  * 字体变形
+  * normal 正常
+  * small-caps 小型大写字母
+  * inherit 继承父元素的字体变形
+  ```css
+    font-variant: normal;
+  ```
+* font
+  * 同时设置字体所有类型的样式
+  * 不同的值用空格隔开
+  * 必要属性
+    * font-size
+    * font-family
+    * 必须先写font-size，再写font-family
+  * 可选属性
+    * font-style
+    * font-weight
+    * font-variant
+  * 设置的属性会继承父元素值（如未指定 font-weight 则沿用父级设置）
+  ```css
+    font: 16px "宋体", "微软雅黑", "黑体";
+  ```
+## 字体分类
+* serif 衬线字体
+* sans-serif 非衬线字体
+* monospace 等宽字体
+* cursive 草书字体
+* fantasy 虚幻字体
+* system-ui 系统字体
+* emoji 表情符号字体
+* math 数学字体
+* 可以将字体设置为大的分类，浏览器会自动选择指定的字体样式并应用样式
+* 一般会将字体的大分类，指定为font-family中的最后一个字体
+```html
+  <p class="p1">我是p标签</p>
+  <p style="font-family: Serif;">衬线字体abcdEFG</p>
+  <p style="font-family: sans-serif;">非衬线字体abcdEFG</p>
+  <p style="font-family: monospace;">等宽字体abcdEFG</p>
+  <p style="font-family: cursive;">草书字体abcdEFG</p>
+  <p style="font-family: fantasy;">虚幻字体abcdEFG</p>
+```
+## 行高
+* 在CSS中并没有直接设置行间距的方式
+* 通过设置行高间接的设置行间距，行高越大，行间距越大
+* 使用line-height设置行高
+```css
+  line-height: 40px;
+```
+* 网页中的文字会默认在行高中垂直居中
+* 行间距 = 行高 - 字体大小
+* 可以传一个百分数，则会相对于字体去计算行高
+```css
+  line-height: 150%;
+```
+* 可以传一个整数，则行高会设置字体大小相应的倍数
+```css
+  line-height: 1.5;
+```
+* 对于单行文本来说，将行高设置为和父元素的高度一致，可以使文本垂直居中
+* 在font中也可以指定行高
+```css
+  font: 16px/40px "宋体", "微软雅黑", "黑体";
+```
+[行高](行高.html)
+![行高](images/行高.png)
+## 文本样式
+* text-transform
+  * 文本转换
+  * none 不转换
+  * capitalize 首字母大写
+  * uppercase 全部大写
+  * lowercase 全部小写
+  * inherit 继承父元素的文本转换
+  ```css
+    text-transform: none;
+  ```
+* text-decoration
+  * 文本装饰
+  * none 不装饰
+  * underline 下划线
+  * overline 上划线
+  * line-through 删除线
+  * blink 闪烁
+  * inherit 继承父元素的文本装饰
+  ```css
+    text-decoration: none;
+  ```
+* text-align
+  * 文本对齐
+  * left 左对齐
+  * right 右对齐
+  * center 居中对齐
+  * justify 两端对齐
+  * inherit 继承父元素的文本对齐
+  ```css
+    text-align: left;
+  ```
+  * a标签超链接默认添加下划线，如果要去除，则将text-decoration设置为none
+* letter-spacing
+  * 字母间距
+  * 可以传一个值，值为正数，则会增加字母间距，值为负数，则会减少字母间距
+  * 可以传一个百分数，则会相对于字体去计算字母间距
+  ```css
+    letter-spacing: 10px;
+  ```
+* word-spacing
+  * 单词间距
+  * 可以传一个值，值为正数，则会增加单词间距，值为负数，则会减少单词间距
+  * 可以传一个百分数，则会相对于字体去计算单词间距
+  ```css
+    word-spacing: 10px;
+  ```
+* text-indent
+  * 文本缩进
+  ```css
+    /* 缩进20px */
+    text-indent: 20px;
+    /* 缩进两个字体 */
+    text-indent: 2em;
+  ```
+* text-align
+  * 文本对齐
+  * left 左对齐
+  * right 右对齐
+  * center 居中对齐
+  * justify 两端对齐
+  * inherit 继承父元素的文本对齐
+  ```css
+    text-align: left;
+  ```
+[文本样式](文本样式.html)
+![文本样式](images/文本样式.png)
