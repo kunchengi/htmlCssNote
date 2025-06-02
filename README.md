@@ -45,20 +45,22 @@
 * 所谓超文本指的是超链接，使用超链接可以让我们从一个页面跳转到另一个页面
 
 ## 标准格式
-  ```html
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <title>Document</title>
-  </head>
-  <body>
 
-  </body>
-  </html>
-  ```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+```
 
 * `<!DOCTYPE html>`是文档声明
+
   * HTML4声明方式
     ```html
       <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -75,7 +77,6 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     ```
   * 如果不写文档声明，则会导致有些浏览器进入怪异模式，浏览器解析页面无法正常显示
-
 * `<html>`是根标签，有且只有一个，网页中的所有内容写在这个标签里面
 * `<head>`标签用来设置网页的头部信息，不会在网页中直接显示，帮助浏览器解析网页
 * `<body>`用来设置网页的主体内容，网页中所有可见的内容都写在body标签内
@@ -138,6 +139,7 @@
 * 在中文系统的浏览器中，默认都是使用GB2312进行解码的
 
 ### 乱码的解决方法
+
 * 保证编码和解码采用的字符集一致
 * 可以在HTML文件中添加字符集声明
   * `<meta charset="UTF-8">`
@@ -164,6 +166,7 @@
     <h5>五级标题</h5>
     <h6>六级标题</h6>
   ```
+
   ![标题标签](images/标题标签.png)
 
 ### 段落标签
@@ -174,7 +177,8 @@
   ```html
     <p>这是一个段落</p>
   ```
- ![段落标签](images/段落标签.png)
+
+![段落标签](images/段落标签.png)
 
 ### 换行标签
 
@@ -189,9 +193,11 @@
     <br/>
     谁之盘中餐，粒粒皆辛苦。
   ```
+
   ![换行标签](images/换行标签.png)
 
 ### 水平分割线标签
+
 * 使用hr标签表示一个水平分割线
 * hr标签是一个自结束标签
   ```html
@@ -199,6 +205,7 @@
     <hr/>
     ps：巴拉巴拉
   ```
+
   ![水平分割线标签](images/水平分割线标签.png)
 
 ## 实体
@@ -216,14 +223,16 @@
   * `&nbsp;` 空格
   * `&copy;` 版权符号 ©
   * `&reg;` 注册商标 ®
+
   ```html
-    a&lt;b
+    a<b
     <br/>
-    a&gt;c
+    a>c
     <br/>
-    &copy;空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格
-  ``` 
-   ![实体](images/实体.png)
+    ©空     格
+  ```
+
+  ![实体](images/实体.png)
 
 ## 图片标签
 
@@ -245,7 +254,7 @@
 * 相对路径
   * src属性配置的是图片的路径，目前我们所要使用的路径全都是相对路径
   * 相对于当前资源所在目录的位置
-  *  ../是返回上级文件夹
+  * ../是返回上级文件夹
 * 图片格式
   * JPG
     * 支持颜色比较多，图片可以压缩，但是不支持透明
@@ -273,6 +282,7 @@
   * 图片的使用原则
     * 效果不一致，使用效果好的
     * 效果一致，使用小的
+
   ```html
     <!--引入本地图片-->
     <img src="imgs/8.jpg" alt="壁纸" width="455px"/>
@@ -284,22 +294,26 @@
 
 * charset
   * 设置网页的字符集
+
   ```html
     <meta charset="UTF-8">
   ```
 * keywords
   * 设置网页的关键字
+
   ```html
     <meta name="keywords" content="HTML5,JavaScript,前端，Java">
   ```
 * description
   * 设置网页的描述
+
   ```html
     <<meta name="description" content="发布h5、js等前端相关信息">
   ```
 * 搜索引擎在检索页面时，会同时检索页面的关键词和描述，但是这两个值不会影响页面在搜索引擎中的排名
 * refresh（刷新）
   * 刷新/请求重定向
+
   ```html
     <!--页面3秒后自动刷新-->
     <meta http-equiv="refresh" content="3;url=index.html"/>
@@ -311,37 +325,44 @@
 
 * header
   * 网页头部
+
   ```html
     <header></header>
   ```
 * main
   * 网页的主体部分
   * 一个页面中只能有一个main
+
   ```html
     <main></main>
   ```
 * footer
   * 网页的底部
+
   ```html
     <footer></footer>
   ```
 * nav
   * 网页的导航栏
+
   ```html
     <nav></nav>
   ```
 * aside
   * 网页的侧边栏
+
   ```html
     <aside></aside>
   ```
 * article
   * 网页的文章
+
   ```html
     <article></article>
   ```
 * section
   * 独立的区块
+
   ```html
     <section></section>
   ```
@@ -349,12 +370,14 @@
   * 没有语义，一个块
   * 目前主要的布局元素
   * 可以代替上边的所有
+
   ```html
     <div></div>
   ```
 * center
   * 居中
   * 已过时，一般用css实现
+
   ```html
     <center><p>居中显示</p></center>
   ```
@@ -375,13 +398,16 @@
 * 引入一个外部的页面
 * 属性
   * src
+
     * 设置一个外部页面的路径,可以是相对路径也可以是绝对路径
   * height
+
     * 设置框架的高度
   * width
-    * 设置框架的宽度
 
+    * 设置框架的宽度
   * name
+
     * 设置框架的名称
 * 在现实开发中不推荐使用内联框架，因为内联框架中的内容不会被搜索引擎所检索
   ```html
@@ -390,6 +416,7 @@
       <iframe src="https://www.baidu.com" name="tom"></iframe>
     </body>
   ```
+
   ![内联框架](images/内联框架.png)
 
 # 超链接
@@ -413,12 +440,14 @@
       * 在整个窗口中打开链接
     * 框架名称
       * 在指定的框架中打开链接
+
   ```html
     <body>
         <a href="https://cn.vuejs.org/" target="tom">vue</a>
         <iframe src="https://www.baidu.com" name="tom"></iframe>
     </body>
   ```
+
   ![超链接](images/超链接.png)
 
 # CSS简介
@@ -440,6 +469,7 @@
   ```
 
 ## 内部样式
+
 * 将CSS样式写到head标签中的style标签中
 * 通过CSS选择器选中指定元素
 * 可以同时为这些元素设置样式，使样式进一步复用
@@ -464,21 +494,26 @@
       </body>
     </html>
   ```
+
   ![内部样式](images/内部样式.png)
 
 ## 外部样式
 
 * 将CSS样式编写到外部CSS文件中
 * 步骤
+
   * 创建一个CSS文件，文件后缀名为.css
   * 编写CSS样式
+
   ```css
     p{
         color: rebeccapurple;
         font-size: 30px;
     }
   ```
+
   * 在HTML文件中通过link标签引入CSS文件
+
   ```html
     <!DOCTYPE html>
     <html lang="en">
@@ -501,12 +536,12 @@
 
 ### CSS注释
 
-  ```css
-    /*这是单行注释*/
-    /*
-      这是一个多行CSS注释
-    */
-  ```
+```css
+  /*这是单行注释*/
+  /*
+    这是一个多行CSS注释
+  */
+```
 
 ### CSS选择器
 
@@ -550,6 +585,7 @@
 * 语法
   * 标签名{}
   * 如：选中所有的p元素
+
   ```css
     p{
         color: red;
@@ -557,10 +593,12 @@
   ```
 
 ### id选择器
+
 * 通过元素的id属性值选中唯一一个元素
 * 语法
   * #id值{}
   * 如：选中id为p1的元素
+
   ```css
     #p1{
         color: red;
@@ -568,6 +606,7 @@
   ```
 
 ### 类选择器
+
 * 通过元素的class属性值选中一组元素
 * 与id选择器类似，但是可以重复
 * 拥有相同class属性值的元素，他们是一组元素
@@ -575,6 +614,7 @@
 * 语法
   * .class值{}
   * 如：选中class为p2的元素
+
   ```css
     .p2{
         color: red;
@@ -582,10 +622,12 @@
   ```
 
 ### 通配选择器
+
 * 选中页面中所有的元素
 * 语法
   * *{}
   * 如：选中所有的元素
+
   ```css
     *{
         color: red;
@@ -593,10 +635,12 @@
   ```
 
 ### 并集选择器（选择器分组）
+
 * 同时选中多个选择器对应的元素
 * 语法
   * 选择器1,选择器2,选择器3...{}
   * 如：选中所有的p元素或者class为p2的元素或者id为p1的元素
+
   ```css
     p,.p2,#p1{
         color: red;
@@ -604,11 +648,13 @@
   ```
 
 ### 交集选择器（复合选择器）
+
 * 选中同时满足多个选择器的元素
 * 对于id选择器来说，不建议使用复合选择器
 * 语法
   * 选择器1选择器2选择器3...{}
   * 如：选中class为p2的div元素
+
   ```css
     div.p2{
         color: red;
@@ -621,6 +667,7 @@
 * 语法
   * 选择器1 选择器2{}
   * 如：选中div中的所有p元素
+
   ```css
     div p{
         color: red;
@@ -628,11 +675,13 @@
   ```
 
 ### 子元素选择器
+
 * 选中指定元素的所有子元素
 * IE6及以下的浏览器不支持子元素选择器
 * 语法
   * 父元素 > 子元素{}
   * 如：选中div的子元素中的所有p元素
+
   ```css
     div > p{
         color: red;
@@ -640,10 +689,12 @@
   ```
 
 ### 伪类选择器
+
 * 伪类选择器是用来选中元素的某种状态
 * 比如：访问过的超链接，普通的超链接，获取焦点的文本框，鼠标悬停的元素等
 * 伪类选择器的语法
   * 选择器:伪类名{}
+
   ```css
     /*选中所有的a元素的鼠标悬停状态*/
     a:hover{
@@ -685,10 +736,12 @@
 * IE6中不支持对超链接以外的元素设置hover和active
 
 ### 伪元素选择器
+
 * 伪元素选择器是用来选中元素的某个部分
 * 比如：第一个字符，第一个字母，第一个行，第一个段落等
 * 伪元素选择器的语法
   * 选择器::伪元素名{}
+
   ```css
     /*选中所有的p元素的第一个字符*/
     p::first-letter{
@@ -705,6 +758,7 @@
   ```
 
 ### 属性选择器
+
 * 根据元素中的属性或属性值来选择指定元素
 * 语法
   * [属性名] 选取含有指定属性名的元素
@@ -712,6 +766,7 @@
   * [属性名^=属性值] 选取属性值以指定值开头的元素
   * [属性名$=属性值] 选取属性值以指定值结尾的元素
   * [属性名*=属性值] 选取属性值中包含指定值的元素
+
   ```css
     /*选中所有具有href属性的a元素*/
     a[href]{
@@ -778,6 +833,7 @@
   * child是从1开始计数，of-type是从0开始计数
 
 ### 兄弟元素选择器
+
 * 兄弟元素选择器是用来选中元素的兄弟元素的
 * 语法
   ```css
@@ -792,6 +848,7 @@
   ```
 
 ### 否定伪类
+
 * 否定伪类是用来选中不满足条件的元素的
 * 语法
   ```css
@@ -808,6 +865,7 @@
 * 并不是所有的样式都会被后代元素所继承，如：背景、边框、定位相关的样式不会被继承
 
 ### 样式的优先级
+
 * 当一个元素上有多个样式时，会根据样式的优先级来决定最终的样式
 * 样式的优先级分为以下几种
   * 行内样式 > 内部样式 > 外部样式
@@ -829,6 +887,7 @@
 * 可以在样式的最后，添加一个!important，则此时该样式将会获得最高的优先级，但是在开发中尽量避免使用
 
 ### 伪类的顺序
+
 * 这四个选择器的优先级是一样的，但是请按以上的顺序写，不然会被覆盖
   * :link
   * :visited
@@ -883,12 +942,13 @@
 * `<code>`
   * 代码标签
   * 表示一段代码
-  [文本标签](文本标签.html)
-  ![文本标签](images/文本标签.png)
+    [文本标签](文本标签.html)
+    ![文本标签](images/文本标签.png)
 
 # 列表
 
 ## 无序列表
+
 * 无序列表使用ul标签来定义
 * 每个列表项使用li标签来定义
 * 列表项前面会显示一个小的蓝色的圆点
@@ -909,6 +969,7 @@
     * 实心方块
   * none
     * 不显示列表项前面的小圆圈
+
   ```css
     ul{
         list-style-type: disc;
@@ -919,6 +980,7 @@
     * 默认值，列表项前面的小圆圈会显示在列表项的外面
   * inside
     * 列表项前面的小圆圈会显示在列表项的里面
+
   ```css
     ul{
         list-style-position: outside;
@@ -927,6 +989,7 @@
 * 可以通过list-style-image属性将小圆圈替换为一个图片
   * url(图片路径)
     * 显示一个小的图片
+
   ```css
     ul{
         list-style-image: url(images/1.png);
@@ -934,6 +997,7 @@
   ```
 
 ## 有序列表
+
 * 有序列表使用ol标签来定义
 * 每个列表项使用li标签来定义
 * 列表项前面会显示一个数字
@@ -960,14 +1024,17 @@
     * 大写罗马数字
   * none
     * 不显示列表项前面的数字
+
     ```css
       ol{
           list-style-type: decimal;
       }
     ```
+
     ![有序列表](images/有序列表.png)
 
 ## 自定义列表
+
 * 自定义列表使用dl标签来定义
 * 每个列表项使用dt标签来定义
 * 每个列表项的描述使用dd标签来定义
@@ -982,38 +1049,42 @@
         <dd>吃坚果很厉害</dd>
     </dl>
   ```
-   ![自定义列表](images/自定义列表.png)
+
+  ![自定义列表](images/自定义列表.png)
 
 ## 列表的嵌套
+
 * ul，ol，dl列表之间可以互相嵌套
-   ```html
-    <ul><!--无序列表，默认圆点-->
-        <li>水果</li><!--列表项-->
-        <ol><!--嵌套列表-->
-            <li>苹果</li><!--列表项-->
-            <li>橘子</li>
-            <li>香蕉</li>
-        </ol>
-        <li>动物</li>
-        <ul><!--嵌套列表-->
-            <li>猫</li><!--列表项-->
-            <li>狗</li>
-            <li>猪</li>
-            <li>鱼</li>
-        </ul>
-        <dl>
-            <dt>武松</dt>
-            <dd>打老虎很厉害</dd>
-            <dt>许嵩</dt>
-            <dd>写歌很厉害</dd>
-            <dt>松鼠</dt>
-            <dd>吃坚果很厉害</dd>
-        </dl>
-    </ul>
-   ```
-   ![列表的嵌套](images/列表的嵌套.png)
+  ```html
+   <ul><!--无序列表，默认圆点-->
+       <li>水果</li><!--列表项-->
+       <ol><!--嵌套列表-->
+           <li>苹果</li><!--列表项-->
+           <li>橘子</li>
+           <li>香蕉</li>
+       </ol>
+       <li>动物</li>
+       <ul><!--嵌套列表-->
+           <li>猫</li><!--列表项-->
+           <li>狗</li>
+           <li>猪</li>
+           <li>鱼</li>
+       </ul>
+       <dl>
+           <dt>武松</dt>
+           <dd>打老虎很厉害</dd>
+           <dt>许嵩</dt>
+           <dd>写歌很厉害</dd>
+           <dt>松鼠</dt>
+           <dd>吃坚果很厉害</dd>
+       </dl>
+   </ul>
+  ```
+
+  ![列表的嵌套](images/列表的嵌套.png)
 
 # 长度单位
+
 * px
   * 像素
   * 最常用的单位
@@ -1030,17 +1101,20 @@
   * 设置字体相关的样式时使用
 * rem
   * 相对于根元素的字体大小来计算
-[长度单位](长度单位.html)
-![长度单位](images/长度单位.png)
+    [长度单位](长度单位.html)
+    ![长度单位](images/长度单位.png)
 
 # 颜色单位
+
 ## 单词
+
 * red 红色
 * blue 蓝色
 * green 绿色
 * 等
 
 ## RGB
+
 * RGB指的是Red Green Blue三原色
   * 通过这三种颜色的不同浓度，来表示不同的颜色
   * 语法：
@@ -1049,11 +1123,13 @@
     * 浓度也可以采用百分数表示
 
 ## RGBA
+
 * 在RGB的基础上增加一个a表示不透明度
 * 需要四个值，前三个和rgb一样，第四个表示不透明度
 * 不透明度的范围：0-1
 
 ## 十六进制
+
 * 与RGB原理一样
 * 使用三组两位的十六进制数组表示一个颜色
 * 每组取00~ff
@@ -1062,6 +1138,7 @@
 * 两位重复的颜色可以简写，如#ff0000可写成#f00
 
 ## HSL和HSLA
+
 * HSL指的是Hue(色相)，Saturation(饱和度)，Lightness(亮度)
 * 色相：0-360
 * 饱和度：0-100%
@@ -1077,6 +1154,7 @@
 * color
   * 字体颜色
   * 可以使用单词，rgb，rgba，十六进制，hsl，hsla等
+
   ```css
     color: red;
   ```
@@ -1089,6 +1167,7 @@
   * 一般情况文字实际大小要比格子小
   * 根据字体的不同，显示效果也不同
   * 浏览器最小字体大写是12px
+
   ```css
     font-size: 16px;
   ```
@@ -1099,6 +1178,7 @@
   * 同时指定多个字体，多个字体之间使用,分开，当采用多个字体时，浏览器会优先使用前边的字体，如果前边不支持，再逐一使用后边的字体
   * 浏览器使用的字体就是用户计算机的字体
   * 在开发中尽量不要用不常用的字体
+
   ```css
     font-family: "宋体", "微软雅黑", "黑体";
   ```
@@ -1108,6 +1188,7 @@
   * italic 斜体
   * oblique 倾斜
   * inherit 继承父元素的字体样式
+
   ```css
     font-style: normal;
   ```
@@ -1122,6 +1203,7 @@
     * 数字越大越粗
     * 400是正常
     * 由于用户计算机没有这么多级别的字体，所以不能达到我们想要的效果，一般不使用
+
   ```css
     font-weight: normal;
   ```
@@ -1130,6 +1212,7 @@
   * normal 正常
   * small-caps 小型大写字母
   * inherit 继承父元素的字体变形
+
   ```css
     font-variant: normal;
   ```
@@ -1145,10 +1228,13 @@
     * font-weight
     * font-variant
   * 设置的属性会继承父元素值（如未指定 font-weight 则沿用父级设置）
+
   ```css
     font: 16px "宋体", "微软雅黑", "黑体";
   ```
+
 ## 字体分类
+
 * serif 衬线字体
 * sans-serif 非衬线字体
 * monospace 等宽字体
@@ -1159,6 +1245,7 @@
 * math 数学字体
 * 可以将字体设置为大的分类，浏览器会自动选择指定的字体样式并应用样式
 * 一般会将字体的大分类，指定为font-family中的最后一个字体
+
 ```html
   <p class="p1">我是p标签</p>
   <p style="font-family: Serif;">衬线字体abcdEFG</p>
@@ -1167,42 +1254,57 @@
   <p style="font-family: cursive;">草书字体abcdEFG</p>
   <p style="font-family: fantasy;">虚幻字体abcdEFG</p>
 ```
+
 ## 行高
+
 * 在CSS中并没有直接设置行间距的方式
 * 通过设置行高间接的设置行间距，行高越大，行间距越大
 * 使用line-height设置行高
+
 ```css
   line-height: 40px;
 ```
+
 * 网页中的文字会默认在行高中垂直居中
 * 行间距 = 行高 - 字体大小
 * 可以传一个百分数，则会相对于字体去计算行高
+
 ```css
   line-height: 150%;
 ```
+
 * 可以传一个整数，则行高会设置字体大小相应的倍数
+
 ```css
   line-height: 1.5;
 ```
+
 * 对于单行文本来说，将行高设置为和父元素的高度一致，可以使文本垂直居中
 * 在font中也可以指定行高
+
 ```css
   font: 16px/40px "宋体", "微软雅黑", "黑体";
 ```
+
 [行高](行高.html)
 ![行高](images/行高.png)
+
 ## 文本样式
+
 * text-transform
+
   * 文本转换
   * none 不转换
   * capitalize 首字母大写
   * uppercase 全部大写
   * lowercase 全部小写
   * inherit 继承父元素的文本转换
+
   ```css
     text-transform: none;
   ```
 * text-decoration
+
   * 文本装饰
   * none 不装饰
   * underline 下划线
@@ -1210,36 +1312,46 @@
   * line-through 删除线
   * blink 闪烁
   * inherit 继承父元素的文本装饰
+
   ```css
     text-decoration: none;
   ```
 * text-align
+
   * 文本对齐
   * left 左对齐
   * right 右对齐
   * center 居中对齐
   * justify 两端对齐
   * inherit 继承父元素的文本对齐
+
   ```css
     text-align: left;
   ```
+
   * a标签超链接默认添加下划线，如果要去除，则将text-decoration设置为none
 * letter-spacing
+
   * 字母间距
   * 可以传一个值，值为正数，则会增加字母间距，值为负数，则会减少字母间距
   * 可以传一个百分数，则会相对于字体去计算字母间距
+
   ```css
     letter-spacing: 10px;
   ```
 * word-spacing
+
   * 单词间距
   * 可以传一个值，值为正数，则会增加单词间距，值为负数，则会减少单词间距
   * 可以传一个百分数，则会相对于字体去计算单词间距
+
   ```css
     word-spacing: 10px;
   ```
 * text-indent
+
   * 文本缩进
+
   ```css
     /* 缩进20px */
     text-indent: 20px;
@@ -1247,14 +1359,125 @@
     text-indent: 2em;
   ```
 * text-align
+
   * 文本对齐
   * left 左对齐
   * right 右对齐
   * center 居中对齐
   * justify 两端对齐
   * inherit 继承父元素的文本对齐
+
   ```css
     text-align: left;
   ```
+
 [文本样式](文本样式.html)
 ![文本样式](images/文本样式.png)
+
+# 盒模型
+
+* CSS处理网页时，认为每个元素都包含在一个不可见的盒子里
+* 只需要将相应的盒子摆放到网页中相应的位置即可完成网页的布局
+* 一个盒子可分成4个部分
+  * 内容区（content）
+  * 内边距（padding）
+  * 边框（border）
+  * 外边距（margin）
+
+## 边框
+
+* 要为元素设置边框必须指定三个样式
+  * border-width
+    * 边框的宽度
+    * 如果设置四个值,则会分别设置上右下左的边框宽度
+    * 如果只设置三个值，则会分别设置给上 左右 下
+    * 如果只设置两个值，则会分别设置给上下 左右
+    * 如果只设置一个值，则设置给四边
+  ```css
+    border-width: 1px;
+    border-width: 1px 2px;
+    border-width: 1px 2px 3px;
+    border-width: 1px 2px 3px 4px;
+  ```
+  * border-color
+    * 边框的颜色
+    * 如果设置四个值,则会分别设置上右下左的边框颜色
+    * 如果只设置三个值，则会分别设置给上 左右 下
+    * 如果只设置两个值，则会分别设置给上下 左右
+    * 如果只设置一个值，则设置给四边
+  ```css
+    border-color: red;
+    border-color: red blue;
+    border-color: red blue green;
+    border-color: red blue green yellow;
+  ```
+  * border-style
+    * 边框的样式
+    * 如果设置四个值,则会分别设置上右下左的边框样式
+    * 如果只设置三个值，则会分别设置给上 左右 下
+    * 如果只设置两个值，则会分别设置给上下 左右
+    * 如果只设置一个值，则设置给四边
+    * 枚举值
+      * none 无边框
+      * hidden 隐藏边框
+      * solid 实线
+      * dotted 点状边框
+      * dashed 虚线
+      * double 双线边框
+  ```css
+    border-style: solid;
+    border-style: solid dotted dashed double;
+  ```
+* 大部分的浏览器中，边框的宽度和颜色都是有默认值的，而边框的样式默认值都为none
+* width和height属性只是设置盒子的内容区大小，而不是盒子的整个大小
+* border-xxx-width
+  * 设置指定位置边框的宽度
+  * 枚举值
+    * top
+    * right
+    * bottom
+    * left
+```css
+ border-top-width: 5px;
+```
+
+* border-xxx-color
+  * 设置指定位置边框的颜色
+  * 枚举值
+    * top
+    * right
+    * bottom
+    * left
+```css
+ border-left-color: red;
+```
+
+* border-xxx-style
+  * 设置指定位置边框的样式
+  * 枚举值
+    * top
+    * right
+    * bottom
+    * left
+```css
+ border-right-style: dashed;
+```
+
+### 边框简写
+* border
+  * 设置边框的样式、宽度、颜色
+  * 无任何顺序要求
+  * 不能分别指定每个边
+```css
+  border: 5px solid red;
+```
+* border-xxx
+  *  设置指定位置的边框样式、宽度、颜色
+  * 枚举值
+    * top
+    * right
+    * bottom
+    * left
+```css
+  border-right: 5px solid red;
+```
