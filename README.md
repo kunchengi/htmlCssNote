@@ -1584,3 +1584,29 @@
 * 内联元素可以设置水平方向的外边距、不能设置垂直方向的外边距
 [内联元素的盒模型](内联元素的盒模型.html)
 ![内联元素的盒模型](images/内联元素的盒模型.png)
+
+# display和visibility
+
+## display
+* 修改元素类型
+* 可以将块元素改成内联元素，也可以将内联元素改成块元素
+* 枚举值
+  * block 块元素
+  * inline 内联元素
+  * inline-block 内联块元素（行内块元素）
+    * 可以使一个元素既有内联元素的特点，又有块元素的特点
+    * 既可以设置宽高，又不会独占一行
+  * table 表格元素
+  * none 隐藏元素
+  * flex 弹性盒子
+
+## visibility
+* 修改元素的可见性
+* 枚举值
+  * visible 可见
+  * hidden 隐藏
+
+## display:none与visibility:hidden的区别
+* display:none会隐藏元素，并且会让元素不再占用空间
+* visibility:hidden会隐藏元素，但是会让元素继续占用空间
+
