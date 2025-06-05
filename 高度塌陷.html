@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度塌陷示例</title>
+    <style>
+        /* 问题容器 */
+        .collapse-box {
+            background: pink;
+            border: 2px solid red;
+        }
+        
+        /* 修复容器 */
+        .fixed-box {
+            background: lightgreen;
+            border: 2px solid blue;
+            margin-top: 20px;
+        }
+        
+        .float-item {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            float: left;
+            margin: 10px;
+        }
+        
+        /* 清除浮动方案 */
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- 高度塌陷示例 -->
+    <div class="collapse-box">
+        有高度塌陷问题的容器
+        <div class="float-item">浮动元素1</div>
+    </div>
+    
+    <!-- 修复后的示例 -->
+    <div class="fixed-box clearfix">
+        修复高度塌陷后的容器
+        <div class="float-item">浮动元素2</div>
+    </div>
+</body>
+</html>
