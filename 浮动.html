@@ -27,13 +27,47 @@
             background-color:blue;
             float: left;
         }
+        .box4{
+            background-color: green;
+            float: left;
+        }
+        .span1{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            float: left;
+        }
+        .container {
+            width: 600px;
+            padding: 20px;
+        }
+        .float-img {
+            width: 200px;
+            height: 150px;
+            float: left;
+            margin-right: 15px;
+            border: 2px solid #333;
+        }
+        .text-content {
+            text-align: justify;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
     <div class="box">
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
+        <div class="box1">1不浮动</div>
+        <div class="box2">2右浮动</div>
+        <div class="box3">3左浮动</div>
+        <div class="box4">4未设置宽高的左浮动</div>
+        <span class="span1">5左浮动的span，可以设置宽高</span>
+    </div>
+    <div class="container">
+        <img src="https://picsum.photos/200/150" class="float-img" alt="示例图片">
+        <p class="text-content">
+            <!-- 这里用长文本展示文字环绕效果 -->
+            浮动元素会脱离标准文档流，但文本内容会环绕在浮动元素周围。这是CSS布局中实现文字环绕图片效果的常用方法。当我们将图片设置为左浮动时，右侧的文本会自动围绕图片排列，形成自然的图文混排效果。这种布局方式常见于新闻网站、博客文章等需要图文结合的场景。通过调整margin属性可以控制文本与浮动元素之间的间距，使排版更加美观。值得注意的是，浮动元素的宽度应该固定，以确保布局的稳定性。
+        </p>
     </div>
 </body>
 </html>
