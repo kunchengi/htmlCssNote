@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位</title>
+    <style type="text/css">
+        .box1{
+            height: 200px;
+            background-color: cadetblue;
+            position: relative;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            /*相对定位*/
+            position: relative;
+            /*设置偏移量*/
+            left: 200px;
+            top: 300px;
+        }
+        .box3{
+            width: 300px;
+            height: 200px;
+            background-color: burlywood;
+        }
+        .s1{
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">不设置偏移量</div>
+    <div class="box2">左偏移200px，上偏移200px，未脱离文档流，会提升一个层级，但是会保留原始的占位空间</div>
+    <div class="box3">不设置定位，会根据文档流排列到box2原始占位空间的下方</div>
+    <span class="s1">我是一个span标签，不会改变元素性质</span>
+</body>
+</html>
