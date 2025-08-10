@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置元素的透明背景</title>
+    <style>
+        .outBox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+        }
+        .inBox {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /*设置透明背景*/
+            opacity: 0.5;
+            position: absolute;
+            /*设置偏移量*/
+            left: 150px;
+            top: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="outBox">
+        我是外面的盒子
+        <div class="inBox">
+            我是里面的盒子
+        </div>
+    </div>
+</body>
+</html>
