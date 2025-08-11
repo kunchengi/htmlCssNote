@@ -1934,3 +1934,51 @@
 
 [背景有关样式](背景有关样式.html)
 ![背景有关样式](images/背景有关样式.png)
+
+# 表格
+
+## 表格简介
+
+* 表格就是用来表示一些格式化的数据的，比如：课程表、银行对账单
+* table标签
+  * 创建表格
+  * 块元素
+* tr标签
+  * 表示表格中的一行，有几行就有几个tr
+* th标签
+  * 表头，一般写在表格的第一行
+  * 默认居中和加粗
+* td标签
+  * 表格单元格
+* rowspan
+  * 纵向合并单元格
+* colspan
+  * 横向合并单元格
+```html
+  <table border="1" width="40%" align="center">
+    <!--在table标签中使用tr来表示表格中的一行，有几行就有几个tr-->
+    <tr>
+        <!-- 在tr中需要使用td来创建一个单元格，有几个单元格就有几个td -->
+        <td>A1</td>
+        <td>A2</td>
+        <td>A3</td>
+    </tr>
+    <tr>
+        <td>B1</td>
+        <td>B2</td>
+        <!--rowspan用来设置纵向的合并单元格-->
+        <td rowspan="2">B3,rowspan="2"</td>
+    </tr>
+    <tr>
+        <td>C1</td>
+        <td>C2</td>
+    </tr>
+    <tr>
+        <td>D1</td>
+        <!--colspan横向的合并单元格-->
+        <td colspan="2">D2,colspan="2"</td>
+    </tr>
+  </table>
+```
+[表格简介](表格简介.html)
+![表格简介](images/表格简介.png)
