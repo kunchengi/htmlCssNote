@@ -1915,5 +1915,22 @@
     background-size: 100px 100px;
   }
 ```
+
+* background
+  * 背景的简写属性
+  * 背景相关的所有属性都可以写在background属性中
+  * 取值
+    * 背景颜色
+    * 背景图片
+    * 背景重复
+    * 背景位置
+    * 背景附件
+    * 背景大小
+```css
+  .box {
+    background: red url(images/1.jpg) no-repeat top right;
+  }
+```
+
 [背景有关样式](背景有关样式.html)
 ![背景有关样式](images/背景有关样式.png)
