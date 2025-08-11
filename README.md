@@ -2009,3 +2009,73 @@
 ```
 [表格的样式](表格的样式.html)
 ![表格的样式](images/表格的样式.png)
+
+## 长表格
+
+* 长表格分为三个部分
+  * 表头
+  * 表格主体
+  * 表格底部
+* 在HTML中有三个标签定义长表格，这些标签写在table标签中，tr/td写在thead/tbody/tfoot中
+  * thead
+    * 表头
+    * 内容显示在表格的头部
+  * tbody
+    * 表格主体
+    * 内容显示在表格的中间
+  * tfoot
+    * 表格底部
+    * 内容显示在表格的底部
+* 如果表格中没有写tbody，浏览器会自动在表格中添加tbody标签，并且将所有的tr都放到tbody中
+* 所以注意tr并不是table的子元素，而是tbody的子元素
+* 通过table > tr 无法选中行 需要通过tbody > tr选中行
+```html
+    <table>
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>收入</th>
+                <th>支出</th>
+                <th>合计</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>合计</td>
+                <td>100</td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <td>10.24</td>
+                <td>500</td>
+                <td>300</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>10.24</td>
+                <td>500</td>
+                <td>300</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>10.24</td>
+                <td>500</td>
+                <td>300</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>10.24</td>
+                <td>500</td>
+                <td>300</td>
+                <td>200</td>
+            </tr>
+        </tbody>
+    </table>
+```
+[长表格](长表格.html)
+![长表格](images/长表格.png)
