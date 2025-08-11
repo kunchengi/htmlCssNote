@@ -1982,3 +1982,30 @@
 ```
 [表格简介](表格简介.html)
 ![表格简介](images/表格简介.png)
+
+## 表格的样式
+
+* border-spacing
+  * 用来设置单元格的间距
+  * 取值
+    * 像素
+    * 百分比
+```css
+  table {
+    border-spacing: 10px;
+  }
+```
+
+* border-collapse
+  * 用来设置单元格的边框是否合并，也就是是否取消双线
+  * 取值
+    * collapse 合并
+    * separate 不合并
+  * 如果设置了边框合并，则border-spacing自动失效
+```css
+  table {
+    border-collapse: collapse;
+  }
+```
+[表格的样式](表格的样式.html)
+![表格的样式](images/表格的样式.png)
