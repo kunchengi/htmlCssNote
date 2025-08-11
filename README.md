@@ -1824,6 +1824,96 @@
   * 取值范围：0~1
   * 0表示完全透明，1表示完全不透明
   * 在IE8及以下的浏览器中不支持，需要使用filter属性设置透明背景，它需要0~100之间的值，值越大越不透明
+```css
+  .box {
+    opacity: 0.5;
+  }
+```
 [设置元素的透明背景](设置元素的透明背景.html)
 ![设置背景透明度](images/设置背景透明度.png)
 
+## 背景有关样式
+
+* background-color
+  * 背景颜色
+```css
+  .box {
+    background-color: red;
+  }
+```
+
+* background-image
+  * 背景图片
+  * 如果背景图片大于元素,默认会显示图片左上角
+  * 如果背景图片小于元素,则会将背景图片平铺重复填充元素
+  * 可以同时为一个元素指定背景颜色和背景图片,这样背景颜色将会作为背景图片的底色
+```css
+  .box {
+    background-image: url(images/1.jpg);
+  }
+```
+
+* background-repeat
+  * 背景图片是否重复
+  * 取值
+    * repeat 重复
+    * no-repeat 不重复
+    * repeat-x 水平重复
+    * repeat-y 垂直重复
+```css
+  .box {
+    background-repeat: no-repeat;
+  }
+```
+
+* background-position
+  * 背景图片的位置
+  * 使用top right left bottom center中的两个值指定背景图片的位置
+  * 如果只给一个值，则第二个值默认是center
+  * 取值
+    * top
+    * bottom
+    * left
+    * right
+    * center
+```css
+  .box {
+    background-position: top right;
+  }
+```
+  * 也可以指定两个偏移量
+  * 第一个值表示水平方向的偏移量
+  * 第二个值表示垂直方向的偏移量
+  * 如果为负值则向反方向移动
+  * 单位可以是像素或百分比
+```css
+  .box {
+    background-position: 100px 100px;
+  }
+```
+
+* background-attachment
+  * 设置背景图片是否随页面一起滚动
+  * 取值
+    * scroll 背景图片会随着页面的滚动而滚动
+    * fixed 背景图片固定不动
+```css
+  .box {
+    background-attachment: fixed;
+  }
+```
+
+* background-size
+  * 设置背景图片的大小
+  * 取值
+    * 像素
+    * 百分比
+    * cover 背景图片会被等比例缩放，直到完全覆盖元素
+    * contain 背景图片会被等比例缩放，直到完全被元素包含
+```css
+  .box {
+    background-size: 100px 100px;
+  }
+```
+[背景有关样式](背景有关样式.html)
+![背景有关样式](images/背景有关样式.png)
