@@ -8,14 +8,20 @@
         /* 问题容器 */
         .collapse-box {
             background: pink;
-            border: 2px solid red;
         }
+
+        .son1{
+            width: 50px;
+            height: 50px;
+            margin-top: 150px;
+            background: yellow
+        }
+
         
         /* 修复容器 */
         .fixed-box {
             background: lightgreen;
-            border: 2px solid blue;
-            margin-top: 20px;
+            margin-top: 50px;
         }
         
         .float-item {
@@ -23,28 +29,49 @@
             height: 100px;
             background: skyblue;
             float: left;
-            margin: 10px;
+            margin-top: 50px;
         }
         
-        /* 清除浮动方案 */
+        /* 使用伪块元素清除浮动,由于只在后面加了伪元素,所以只能解决高度塌陷问题 */
         .clearfix::after {
             content: "";
             display: block;
             clear: both;
+        }
+
+        /* 使用伪表格清除浮动,由于只在前后加了伪元素,所以能解决高度塌陷和外边距重叠问题 */
+        .clearfix1:before,
+        .clearfix1:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .clearfix1{
+            zoom: 1;
         }
     </style>
 </head>
 <body>
     <!-- 高度塌陷示例 -->
     <div class="collapse-box">
+        <div class="son1">外边距重叠1</div>
         有高度塌陷问题的容器
         <div class="float-item">浮动元素1</div>
     </div>
     
     <!-- 修复后的示例 -->
     <div class="fixed-box clearfix">
-        修复高度塌陷后的容器
+        <div class="son1">外边距重叠2</div>
+        <!-- 使用伪块元素修复高度塌陷后的容器 -->
         <div class="float-item">浮动元素2</div>
+    </div>
+
+    <!-- 修复后的示例 -->
+    <div class="fixed-box clearfix1">
+        <div class="son1">外边距重叠3</div>
+        <!-- 使用伪表格修复高度塌陷后的容器和外边距重叠问题 -->
+        <div class="float-item">浮动元素3</div>
     </div>
 </body>
 </html>

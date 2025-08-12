@@ -1735,6 +1735,9 @@
     clear: both;
   }
 ```
+* 解决方式3
+  * 既可以解决高度塌陷，又可以确保父元素和子元素的垂直外边距不会重叠
+  * 详情跳转[完善clearfix](#完善clearfix)
 [高度塌陷](高度塌陷.html)
 ![高度塌陷](images/高度塌陷.png)
 
@@ -2115,3 +2118,23 @@
 ```
 [表格布局](表格布局.html)
 ![表格布局](images/表格布局.png)
+
+## 完善clearfix
+
+* 解决高度塌陷和外边距重叠问题
+* 子元素和父元素相邻的垂直外边距会发生重叠，子元素的外边距会传递给父元素
+* 使用空的table标签可以隔离父子元素的外边距，阻止外边距的重叠
+```css
+  .clearfix1:before,
+  .clearfix1:after{
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+  .clearfix1{
+      zoom: 1;
+  }
+```
+[高度塌陷](高度塌陷.html)
+![高度塌陷](images/高度塌陷.png)
