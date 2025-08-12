@@ -2079,3 +2079,39 @@
 ```
 [长表格](长表格.html)
 ![长表格](images/长表格.png)
+
+## 表格布局
+
+* 以前表格更多的情况实际上是用来对页面进行布局的，但是这种方式早已被CSS所淘汰了
+* 表格的列数由td最多的那行决定
+* 表格是可以嵌套，可以在td中在放置一个表格
+```html
+  <table border="1" width="100%">
+    <!-- 顶部 -->
+    <tr height="100px">
+        <td colspan="2">顶部</td>
+    </tr>
+    <!-- 内容区 -->
+    <tr height="400px">
+        <!-- 左侧 -->
+        <td width="20%">左侧</td>
+        <!-- 右侧 -->
+        <td width="80%">
+            <table border="1" width="100%" height="100%">
+                <tr>
+                    <td>内嵌表格上</td>
+                </tr>
+                <tr>
+                    <td>内嵌表格下</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- 底部 -->
+    <tr height="100px">
+        <td colspan="2">底部</td>
+    </tr>
+  </table>
+```
+[表格布局](表格布局.html)
+![表格布局](images/表格布局.png)
