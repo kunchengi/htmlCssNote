@@ -2138,3 +2138,202 @@
 ```
 [高度塌陷](高度塌陷.html)
 ![高度塌陷](images/高度塌陷.png)
+
+# 表单
+
+* 表单的作用就是用来将用户信息提交给服务器的
+* 比如：百度的搜索框 注册 登录这些操作都需要填写表单
+
+## form标签
+
+* 创建一个表单
+* form标签中必须指定一个action属性，该属性指向的是一个服务器的地址
+* 当我们提交表单时将会提交到action属性对应的地址
+```html
+  <form action="http://www.baidu.com">
+  </form>
+```
+
+## fieldset标签
+
+* 为表单项进行分组
+* 将表单项中的同一组放到一个fieldset（字段集）中
+
+
+## legend标签
+
+* 指定组名
+```html
+  <form action="http://www.baidu.com">
+    <fieldset>
+      <legend>用户信息</legend>
+    </fieldset>
+    <fieldset>
+      <legend>登录信息</legend>
+    </fieldset>
+  </form>
+```
+
+## input标签
+
+* type
+  * text
+    * 文本输入框
+    ```html
+      用户名：<input type="text" name="username" value="admin">
+    ```
+  * password
+    * 密码输入框
+    ```html
+      密码：<input type="password" name="password" value="123456">
+    ```
+  * radio
+    * 单选框
+    * 通过name属性进行分组，name属性相同是一组按钮
+    ```html
+      性别：<input type="radio" name="sex" value="男" checked>男
+      <input type="radio" name="sex" value="女">女
+    ```
+  * checkbox
+    * 复选框
+    * 通过name属性进行分组，name属性相同是一组按钮
+
+    ```html
+      爱好：<input type="checkbox" name="hobby" value="足球" checked>足球
+      <input type="checkbox" name="hobby" value="篮球" checked>篮球
+    ```
+  * submit
+    * 提交按钮
+    * 将表单中的信息提交给服务器
+    ```html
+      <input type="submit" value="提交">
+    ```
+  * reset
+    * 重置按钮
+    * 将表单所填内容恢复为默认值
+    ```html
+      <input type="reset" value="重置">
+    ```
+  * file
+    * 文件上传按钮
+    * 添加multiple属性可以上传多个文件
+    ```html
+      <input type="file" name="file" multiple>
+    ```
+  * hidden
+    * 隐藏域
+    * 隐藏域的作用是在表单提交时，将隐藏域中的数据提交到服务器
+    ```html
+      <input type="hidden" name="id" value="1">
+    ```
+  * image
+    * 图片按钮
+    * 图片按钮的作用是在点击图片时，提交表单
+    ```html
+      <input type="image" src="images/提交.png" name="submit">
+    ```
+  * button
+    * 普通按钮
+    * 可通过js绑定响应事件
+    ```html
+      <input type="button" value="按钮">
+    ```
+* name属性
+  * 提交给服务器的属性名
+* value属性
+  * 提交到服务器的属性值
+* checked属性
+  * 单选框/复选框默认选中
+* placeholder（占位符）
+  * 输入框的占位符
+  * 当输入框为空时，占位符会显示在输入框中
+  * 当输入框获得焦点时，占位符会消失
+  * 在ie8及以下浏览器中不支持，如果要兼容则需要使用js
+  ```html
+    用户名：<input type="text" name="username" placeholder="请输入用户名">
+  ```
+* 用户填写的信息会附在url地址的后边以查询字符串的形式发送给服务器
+  * 格式：name=value&name=value&name=value
+
+## label标签
+
+* 该标签可以指定一个for属性，该属性的值需要指定一个表单项的id值，用来绑定元素
+* 当点击该文字时，相当于点击绑定的元素
+```html
+  <label for="username">用户名：</label>
+  <input type="text" name="username" id="username">
+```
+
+## select标签(搭配option使用)
+
+* 下拉列表
+* 下拉列表的name属性需要指定给select，而value属性需要指定给option
+* name
+  * 提交给服务器的属性名
+* multiple
+  * 是否多选
+
+## option标签(搭配select使用)
+
+* 下拉列表的选项
+* select标签中的每一个option标签都是下拉列表的一个选项
+* value属性
+  * 提交到服务器的属性值
+* selected
+  * 默认选中
+```html
+  <select name="city" id="city" multiple>
+    <option value="北京" selected>北京</option>
+    <option value="上海">上海</option>
+    <option value="广州">广州</option>
+    <option value="深圳">深圳</option>
+  </select>
+```
+
+## optgroup标签(搭配select使用)
+
+* 下拉列表的选项组
+* select标签中的每一个optgroup标签都是下拉列表的一个选项组
+* label属性
+  * 选项组的名称
+```html
+  <select name="city" id="city" multiple>
+    <optgroup label="广东">
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+    </optgroup>
+    <optgroup label="江苏">
+      <option value="南京">南京</option>
+      <option value="苏州">苏州</option>
+    </optgroup>
+  </select>
+```
+
+## textarea标签
+
+* 文本域
+* 用于输入多行文本
+* 必须指定rows和cols属性
+  * rows
+    * 行数
+  * cols
+    * 列数
+* name
+  * 提交给服务器的属性名
+```html
+  <textarea name="content" id="content" rows="10" cols="30"></textarea>
+```
+
+## button标签
+
+* 按钮
+* 除了使用input，也可以使用button标签来创建按钮
+* 这种方式和使用input类似，只不过由于它是成对出现的标签使用起来更加的灵活
+* 可以在button标签中添加文字
+```html
+  <button type="submit">提交</button>
+  <button type="reset">重置</button>
+  <button type="button">按钮</button>
+```
+[表单](表单.html)
+![表单](images/表单.png)

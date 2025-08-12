@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <form action="target.html">
+        <fieldset>
+            <legend>用户信息</legend>
+            <label for="um">用户名</label>
+            <input id="um" type="text" name="username" /> <br /><br />
+            <label for="pwd">密码 </label>
+            <input id="pwd" type="password" name="password" /> <br /><br />
+        </fieldset>
+        <fieldset>
+            <legend>用户爱好</legend>
+            性别 <input type="radio" name="gender" value="male" id="male" /><label for="male">男</label>
+            <input type="radio" name="gender" value="female" checked="checked" id="female" /><label
+                for="female">女</label>
+            <br /><br />
+            爱好 <input type="checkbox" name="hobby" value="zq" />足球
+            <input type="checkbox" name="hobby" value="lq" />篮球
+            <input type="checkbox" name="hobby" value="ymq" checked="checked" />羽毛球
+            <input type="checkbox" name="hobby" value="ppq" checked="checked" />乒乓球
+            <br /><br />
+        </fieldset>
+        你喜欢的明星
+        <select name="star">
+            <optgroup label="女明星">
+                <option value="fbb">范冰冰</option>
+                <option value="lxr">林心如</option>
+                <option value="zw">赵薇</option>
+            </optgroup>
+            <optgroup label="男明星">
+                <option value="zbs" selected="selected">赵本山</option>
+                <option value="ldh">刘德华</option>
+                <option value="pcj">潘长江</option>
+            </optgroup>
+        </select>
+        <br /><br />
+        自我介绍 <textarea name="info"></textarea>
+        <br /><br />
+        <input type="submit" value="注册" />
+        <input type="reset" />
+        <input type="button" value="按钮" />
+        <br /><br />
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+    </form>
+</body>
+</html>
