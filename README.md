@@ -2377,3 +2377,26 @@
 ```
 [框架集](框架集.html)
 ![框架集](images/框架集.png)
+
+# Ie6png的修复
+
+* 在IE6中对图片格式png24支持度不高，如果使用的图片格式是png24，则会导致透明效果无法正常显示
+
+## 解决方法
+
+### 修改图片格式
+
+* 可以使用png8格式来代替png24格式，即可解决问题
+* 但是使用png8代替png24以后，图片的清晰图会有所下降
+
+### JavaScript解决
+
+* 使用第三方库DD_belatedPNG
+```html
+  <script src="js/DD_belatedPNG.js"></script>
+  <script>
+    // DD_belatedPNG.fix('img');// 修复指定的图片
+    DD_belatedPNG.fix("*");// 修复所有的png图片
+  </script>
+```
+
