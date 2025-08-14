@@ -2400,3 +2400,59 @@
   </script>
 ```
 
+# Hack
+
+* 有一些特殊的代码只需要再某些特殊的浏览器中执行，而再其他浏览器中不执行，可使用CSS Hack来解决该问题
+* 不到万不得已时尽量不要使用
+
+## 条件hack
+
+* 格式
+  * 条件注释
+  * 注释内容
+  * 结束注释
+```html
+  <!--[if IE]>
+    IE浏览器才执行
+  <![endif]-->
+  <!--[if IE 6]>
+    IE6浏览器才执行
+  <![endif]-->
+  <!--[if lt IE 9]>
+    小于IE9浏览器才执行
+  <![endif]-->
+  <!--[if lte IE 9]>
+    小于等于IE9浏览器才执行
+  <![endif]-->
+  <!--[if gt IE 9]>
+    大于IE9浏览器才执行
+  <![endif]-->
+  <!--[if gte IE 9]>
+    大于等于IE9浏览器才执行
+  <![endif]-->
+  <!--[if ! IE 6]>
+    非IE6浏览器才执行
+  <![endif]-->
+```
+* 注意
+  * 条件注释只在IE浏览器中生效
+  * 条件注释不能嵌套使用
+  * 条件注释只能在HTML文档中使用，不能在CSS文档中使用
+
+## 属性hack
+
+```css
+  .class{
+    /*其他浏览器中显示的样式*/
+    background-color: cadetblue;
+    /*在ie6及以下浏览器中显示的样式*/
+    _background-color: red;
+    /*在ie7及以下浏览器中显示的样式*/
+    *background-color: blue;
+    /*在ie浏览器中显示的样式*/
+    background-color: black\9;
+    /*在ie8及以上的浏览器中显示的样式*/
+    background-color: yellow\0;
+  }
+```
+
