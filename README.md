@@ -2456,3 +2456,118 @@
   }
 ```
 
+# 音视频播放
+
+## audio标签
+
+* 向页面中引入外部音频文件
+* 默认情况下不允许用户自己控制播放停止
+* ie8及以下浏览器不支持
+* src
+  * 音频文件的路径
+* controls
+  * 控制条
+  * 添加之后可控制播放暂停和下载
+* autoplay
+  * 自动播放
+  * 大部分浏览器不支持
+* loop
+  * 循环播放
+```html
+  <audio src="audio/1.mp3" controls autoplay loop></audio>
+```
+
+## source标签
+
+* 用于指定音频文件的路径
+* 可以指定多个路径
+* 浏览器会根据自己的支持情况来选择使用哪个路径
+* 不支持的浏览器会显示文字
+```html
+  <audio controls>
+    对不起，您的浏览器不支持播放音频，请升级或更换浏览器
+    <source src="audio/1.mp3" type="audio/mpeg">
+    <source src="audio/1.ogg" type="audio/ogg">
+  </audio>
+```
+
+## embed标签
+
+* 几乎所有浏览器都支持
+* 可播放视频
+* 最好为它指定width和height属性，才能正常显示
+* 非常的不好用
+* type
+  * 指定文件的格式
+```html
+  <embed src="video/1.mp4" controls width="500" height="300" type="audio/mp3">
+```
+* 当ie8及以下浏览器时使用embed，其他浏览器使用audio
+```html
+  <audio controls>
+      <source src="source/horizon.mp3">
+      <embed src="source/horizon.mp3" type="audio/mp3">
+  </audio>
+```
+
+## video标签
+
+* 引入视频文件
+* 用法和audio基本一样
+* ie9及以上浏览器只支持mp4格式
+* 当ie8及以下浏览器时使用embed，其他浏览器使用source
+```html
+  <video controls>
+      <source src="source/audio.mp4">
+      <embed src="source/audio.mp4" type="video/mp4">
+  </video>
+```
+* x-webkit-airplay
+  * 允许在ios设备上播放视频
+* x5-playsinline
+  * 允许在移动端播放视频
+* muted
+  * 静音播放
+* poster
+  * 视频封面
+* x5-video-player-type
+  * 视频播放类型
+  * 可选值
+    * h5 视频播放
+    * native 原生视频播放
+* x5-video-player-fullscreen
+  * 视频全屏播放
+  * 可选值
+    * true
+    * false
+* x5-video-orientation
+  * 视频播放方向
+  * 可选值
+    * portrait 竖屏播放
+    * landscape 横屏播放
+* webkit-playsinline
+  * 允许在移动端播放视频
+  * 可选值
+    * true
+    * false
+* preload
+  * 预加载
+  * 可选值
+    * auto 自动加载
+    * metadata 只加载元数据
+    * none 不加载
+* playsinline
+  * 允许在移动端播放视频
+  * 可选值
+    * true
+    * false
+```html
+  <video src="https://3vj-fe.3vjia.com/project/business/PC/indexpage/video2.mp4" x-webkit-airplay="allow"
+      x5-playsinline="" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="landscape"
+      webkit-playsinline="true" preload="metadata" playsinline="true" muted="muted" loop="loop"
+      autoplay="autoplay"></video>
+```
+
+## 引入外部网站的音视频
+
+![引入外部视频](images/引入外部视频.png)
