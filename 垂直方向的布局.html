@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直方向的布局</title>
+    <style>
+        .outer1 {
+            width: 1000px;
+            background-color: pink;
+        }
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        .outer2 {
+            margin-top: 100px;
+            width: 1000px;
+            height: 300px;
+            background-color: pink;
+            overflow: auto;
+        }
+        .inner2 {
+            width: 300px;
+            height: 500px;
+            background-color: red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer1">
+           子元素设置浮动后可能会导致高度塌陷
+        <div class="inner1"></div>
+    </div>
+    <div class="outer2">
+        <div class="inner2">
+            子元素设置的height超过父元素内容区高度，会溢出父元素
+            可使用overflow为父元素处理溢出内容
+        </div>
+    </div>
+</body>
+</html>
