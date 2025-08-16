@@ -2571,3 +2571,29 @@
 ## 引入外部网站的音视频
 
 ![引入外部视频](images/引入外部视频.png)
+
+# 水平方向的布局
+
+* 元素在其父元素中水平方向的位置由以下几个属性共同决定
+  * margin-left（左外边距）
+  * border-left（左边框）
+  * padding-left（左内边距）
+  * width（宽度）
+  * padding-right（右内边距）
+  * border-right（右边框）
+  * margin-right（右外边距）
+* 一个元素在其父元素中，水平方向必须满足以下等式
+  * margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 其父元素的内容区宽度
+  * 如果不满足且没有auto情况，则称为过度约束，浏览器会自动调整margin-left或margin-right使等式成立
+* 这七个值中，有三个值可以设置成auto
+  * margin-left
+  * margin-right
+  * width
+* 当这三个值中，有一个值设置成auto时，浏览器会自动调整这个值，使等式成立
+* width的值默认就是auto
+* 如果将width和一个或两个外边距设置为auto，则默认只有width为auto，外边距会变为0
+* 如果将两个外边距设置为auto，宽度固定值，则会将外边距设置为相同的值（水平居中）
+* 如果子元素设置的width超过父元素内容区宽度，则子元素会溢出父元素
+[水平方向的布局](水平方向的布局.html)
+![水平方向的布局](images/水平方向的布局.png)
+![水平方向的布局效果](images/水平方向的布局效果.png)

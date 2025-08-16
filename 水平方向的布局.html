@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平方向的布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .outer {
+            width: 1000px;
+            height: 800px;
+            border: 2px solid red;
+            background-color: pink;
+        }
+        .inner1 {
+            margin-left: 100px;
+            border: 2px solid blue;
+            padding-left: 50px;
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            /* margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 
+            100 + 2 + 50 + 300 + 0 + 2 + 546 = 1000px */
+            /* 自动调整margin-right为546 */
+        }
+        .inner2 {
+            margin-left: auto;
+            padding-left: 100px;
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            /* auto + 0 + 100 + 300 + 0 + 0 + 0 = 1000
+            auto = 600         */
+        }
+        .inner3 {
+            margin-left: 100px;
+            height: 100px;
+            background-color: blue;
+            /* width的值默认就是auto, 100 + 0 + 0 + 900 + 0 + 0 + 0 = 1000 */
+
+        }
+        .inner4 {
+            margin-left: auto;
+            padding-left: 100px;
+            width: auto;
+            height: 100px;
+            background-color: yellow;
+            /* 0 + 0 + 100 + 900 + 0 + 0 + 0 = 1000 */
+        }
+        .inner5 {
+            margin-left: auto;
+            border: 2px solid green;
+            padding-left: 100px;
+            margin-right: auto;
+            width: 300px;
+            height: 100px;
+            background-color: green;
+            /* 298 + 2 + 100 + 300 + 0 + 2 + 298 = 1000 */
+        }
+        .inner6 {
+            margin-left: 100px;
+            width: 1200px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        我是外层div
+        <div class="inner1">
+            100 + 2 + 50 + 300 + 0 + 2 + 546
+        </div>
+        <div class="inner2">
+            auto + 0 + 100 + 300 + 0 + 0 + 0 = 1000
+        </div>
+        <div class="inner3">
+            width的值默认就是auto
+        </div>
+        <div class="inner4">
+            当width 和 其它值为auto时，只有width的auto生效
+            0 + 0 + 100 + 900 + 0 + 0 + 0 = 1000
+        </div>
+        <div class="inner5">
+            左右外边距设置为auto，宽度为固定值，实现在父元素水平居中
+            298 + 2 + 100 + 300 + 0 + 2 + 298 = 1000
+        </div>
+        <div class="inner6">
+            width超过父元素内容区宽度，会溢出父元素
+        </div>
+    </div>
+</body>
+</html>
