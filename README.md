@@ -1374,6 +1374,29 @@
 [文本样式](文本样式.html)
 ![文本样式](images/文本样式.png)
 
+## @font-face选择器
+
+* 可以将服务器中的字体直接提供给用户去使用
+* font-family
+  * 指定字体的名字
+* src 
+  * 服务器中字体的路径和字体格式
+  * format写不写都行
+* 问题
+  * 加载速度慢
+  * 版权问题
+  * 字体格式兼容
+* 免费字体下载
+  * [免费字体下载](https://www.fonts.net.cn/)
+```css
+@font-face {
+  font-family: "myFont";
+  src: url("fonts/kaiti.ttf") format("truetype");
+}
+```
+[@font-face选择器](@font-face选择器.html)
+![@font-face选择器](images/@font-face选择器.png)
+
 # 盒模型
 
 * CSS处理网页时，认为每个元素都包含在一个不可见的盒子里
@@ -2696,3 +2719,47 @@
   * border-radius: 999px;
 [轮廓阴影和圆角](轮廓阴影和圆角.html)
 ![轮廓阴影和圆角](images/轮廓阴影和圆角.png)
+
+# 绝对定位元素的位置
+
+## 水平布局
+
+* left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 包含块的内容区的宽度
+* 当我们开启了绝对定位后，水平方向的布局等式就需要添加left 和 right 两个值
+* 此时规则和之前一样只是多添加了两个值
+  * 如果9个值中没有 auto 则自动调整right值以使等式满足
+  * 如果有auto，则自动调整auto的值以使等式满足
+* 可设置auto的值
+  * margin-left
+  * margin-right
+  * width
+  * left
+  * right
+* 因为left 和 right的值默认是auto，所以如果不指定left和right，则等式不满足时，会自动调整这两个值
+* 如果要设置水平居中，需要把left和right设置成相同的值
+
+## 垂直布局
+
+* top + margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom + bottom = 包含块的内容区的高度
+* 可以利用这个特点，让元素垂直居中
+
+## margin:auto实现水平垂直居中
+
+* 子元素设置绝对定位
+* 父元素设置相对定位
+* margin为auto，上下左右偏移量为0
+* 会脱离文档流
+* 这种方式只适用于大小确定的元素
+```css
+  .child{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+```
+[绝对定位元素的位置](绝对定位元素的位置.html)
+![绝对定位元素的位置](images/绝对定位元素的位置.png)
+
