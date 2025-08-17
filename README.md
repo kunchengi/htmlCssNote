@@ -1292,7 +1292,6 @@
 ## 文本样式
 
 * text-transform
-
   * 文本转换
   * none 不转换
   * capitalize 首字母大写
@@ -1304,7 +1303,6 @@
     text-transform: none;
   ```
 * text-decoration
-
   * 文本装饰
   * none 不装饰
   * underline 下划线
@@ -1312,26 +1310,21 @@
   * line-through 删除线
   * blink 闪烁
   * inherit 继承父元素的文本装饰
-
   ```css
     text-decoration: none;
   ```
 * text-align
-
   * 文本对齐
   * left 左对齐
   * right 右对齐
   * center 居中对齐
   * justify 两端对齐
   * inherit 继承父元素的文本对齐
-
   ```css
     text-align: left;
   ```
-
   * a标签超链接默认添加下划线，如果要去除，则将text-decoration设置为none
 * letter-spacing
-
   * 字母间距
   * 可以传一个值，值为正数，则会增加字母间距，值为负数，则会减少字母间距
   * 可以传一个百分数，则会相对于字体去计算字母间距
@@ -1340,7 +1333,6 @@
     letter-spacing: 10px;
   ```
 * word-spacing
-
   * 单词间距
   * 可以传一个值，值为正数，则会增加单词间距，值为负数，则会减少单词间距
   * 可以传一个百分数，则会相对于字体去计算单词间距
@@ -1351,7 +1343,6 @@
 * text-indent
 
   * 文本缩进
-
   ```css
     /* 缩进20px */
     text-indent: 20px;
@@ -1359,17 +1350,38 @@
     text-indent: 2em;
   ```
 * text-align
-
   * 文本对齐
   * left 左对齐
   * right 右对齐
   * center 居中对齐
   * justify 两端对齐
   * inherit 继承父元素的文本对齐
-
   ```css
     text-align: left;
   ```
+
+* vertical-align
+  * 垂直对齐
+  * baseline 默认值，基线对齐
+  * top 顶部对齐
+  * middle 居中对齐，不是严格意义的居中
+  * bottom 底部对齐
+  * 指定值 可以指定一个具体的数值，单位为px，正值往上，负值往下
+  * 可用此方法取消图片的基线对齐
+    * vertical-align: bottom;
+
+* white-space
+  * normal 正常，默认值，会自动换行
+  * nowrap 不换行
+  * pre 保留空格
+  * pre-wrap 保留空格，自动换行
+  * pre-line 保留空格，自动换行，但是会合并多个空格
+
+* 裁剪多余的内容
+  * overflow: hidden;
+
+* 在溢出内容的后方显示省略号
+  * text-overflow: ellipsis;
 
 [文本样式](文本样式.html)
 ![文本样式](images/文本样式.png)
