@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮廓阴影和圆角</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            outline: 2px solid red;
+        }
+        .box2{
+            margin-top: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            box-shadow: 10px 10px 10px red;
+        }
+        .box3{
+            margin-top: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            /* 所有角都设置为相同的圆角 */
+            /* border-radius: 10px; */
+            /* 左上/右下 右上/左下 */
+            /* border-radius: 10px 100px; */
+            /* 左上 右上/左下 右下 */
+            /* border-radius: 10px 100px 50px; */
+            /* 左上 右上 右下 左下 */
+            /* border-radius: 10px 100px 50px 20px; */
+            /* 可以设置两个值，为同个位置两个点的圆角大小 */
+            border-top-left-radius:50px 100px
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        轮廓
+    </div>
+    <div class="box2">
+        阴影
+    </div>
+    <div class="box3">
+        圆角
+    </div>
+</body>
+</html>
