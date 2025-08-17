@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粘滞定位</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        .topbar {
+            width: 1210px;
+            height: 48px;
+            background-color: #E8E7E3;
+            margin: 100px auto;
+            /* 粘滞定位 */
+            position: sticky;
+            /* 当元素到达顶部10px的位置时，固定元素 */
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">topbar</div>
+</body>
+</html>
