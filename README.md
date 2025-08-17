@@ -2076,7 +2076,7 @@
 * background-size
   * 设置背景图片的大小
   * 取值
-    * 像素
+    * 像素，如果只写一个，则第二个值默认是 auto
     * 百分比
     * cover 背景图片会被等比例缩放，直到完全覆盖元素
     * contain 背景图片会被等比例缩放，直到完全被元素包含
@@ -2086,19 +2086,36 @@
   }
 ```
 
+* background-clip
+  * 背景裁剪，设置背景颜色的范围
+  * border-box 默认值，背景会出现在边框内
+  * padding-box 背景会出现在内边距内
+  * content-box 背景会出现在内容区内
+
+* background-origin
+  * 背景图片的偏移量计算的原点
+  * padding-box 原点是内边距
+  * border-box 原点是边框
+  * content-box 原点是内容区域
+
 * background
   * 背景的简写属性
   * 背景相关的所有属性都可以写在background属性中
   * 取值
-    * 背景颜色
-    * 背景图片
-    * 背景重复
-    * 背景位置
-    * 背景附件
-    * 背景大小
+    * background-color
+    * background-image
+    * background-repeat
+    * background-position
+    * background-attachment
+    * background-size
+    * background-clip
+    * background-origin
+  * background-size必须写在background-position的后边，并且使用/隔开
+  * background-origin 要在 background-clip的前面
+
 ```css
   .box {
-    background: red url(images/1.jpg) no-repeat top right;
+    background: url('./imgs/8.jpg') #bfa center center/contain border-box content-box no-repeat ;
   }
 ```
 

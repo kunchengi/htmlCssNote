@@ -66,6 +66,58 @@
             top: 350px;
             left: 500px;
         }
+        .box8 {
+            border: 20px solid #95ceff;
+            padding: 20px;
+            width: 300px;
+            background-image: url(./images/bg/iu.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 350px;
+            left: 1000px;
+            background-clip:content-box;
+            color: #fff;
+        }
+        .box9 {
+            border: 20px solid #95ceff;
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+            background-image: url(./images/bg/iu.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 700px;
+            left: 0;
+            background-origin: content-box;
+            background-position: 0 0;
+            color: #fff;
+        }
+        .box10 {
+            background-color: #95ceff;
+            width: 300px;
+            height: 300px;
+            background-image: url(./images/bg/iu.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 700px;
+            left: 400px;
+            background-size: cover;
+            color: #fff;
+        }
+        .box11 {
+            background-color: #95ceff;
+            width: 300px;
+            height: 300px;
+            background-image: url(./images/bg/iu.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 700px;
+            left: 750px;
+            background-size: contain;
+            color: #fff;
+        }
+
+
     </style>
 </head>
 <body>
@@ -89,6 +141,18 @@
     </div>
     <div class="box7">
         我是box7，图片背景，设置背景图片的尺寸为300px 300px
+    </div>
+    <div class="box8">
+        我是box8，图片背景，背景会出现在内容区内
+    </div>
+    <div class="box9">
+        我是box9，图片背景，背景图片的偏移量计算的原点是内容区
+    </div>
+    <div class="box10">
+        我是box10，图片背景，size为cover
+    </div>
+    <div class="box11">
+        我是box10，图片背景，size为contain
     </div>
 </body>
 </html>
