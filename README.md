@@ -2679,5 +2679,9 @@
   * border-top-left-radius: 10px 100px;
   * 第一个值表示水平方向的圆角大小
   * 第二个值表示垂直方向的圆角大小
+* 圆形
+  * border-radius: 50%;
+* 极限圆角
+  * border-radius: 999px;
 [轮廓阴影和圆角](轮廓阴影和圆角.html)
 ![轮廓阴影和圆角](images/轮廓阴影和圆角.png)
