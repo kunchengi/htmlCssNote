@@ -1397,6 +1397,127 @@
 [@font-face选择器](@font-face选择器.html)
 ![@font-face选择器](images/@font-face选择器.png)
 
+## 图标字体
+
+* 在网页中经常需要使用一些图标
+* 可以通过图片来引入图标，但是图片大小本身比较大，并且非常的不灵活
+* 所以在使用图标时，我们还可以将图标直接设置为字体，然后通过font-face的形式来对字体进行引入
+* 使用时注意版权问题
+
+### fontawesome
+
+#### 使用方式
+
+* 下载 https://fontawesome.com/
+* 解压
+* 将css和webfonts移动到项目中
+* 将all.css引入到网页中
+* 使用图标字体
+  * 直接通过类名来使用图标字体
+  * class="fas fa-bell"
+  * class="fab fa-accessible-icon"
+```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fa/css/all.css">
+  </head>
+  <body>
+    <i class="fas fa-bell" style="font-size:80px; color:red;"></i>
+    <i class="fas fa-bell-slash"></i>
+    <i class="fab fa-accessible-icon"></i>
+    <i class="fas fa-otter" style="font-size: 160px; color:green;"></i>
+  </body>
+  </html>
+```
+
+#### 其他使用方式
+
+* 通过伪元素来设置图标字体
+  * 找到要设置图标的元素通过before或after选中
+  * 在content中设置字体的编码
+  * 设置字体的样式
+    * fab
+      * font-family: 'Font Awesome 5 Brands';
+    * fas
+      * font-family: 'Font Awesome 5 Free';
+      * font-weight: 900;
+* 通过实体方式使用
+  * &#x图标的编码;
+  * <span class="fas">&#xf0f3;</span>
+```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <link rel="stylesheet" href="./fa/css/all.css">
+      <style>
+          li{
+              list-style: none;
+          }
+          li::before{
+              /*
+                  通过伪元素来设置图标字体
+                      1.找到要设置图标的元素通过before或after选中
+                      2.在content中设置字体的编码
+                      3.设置字体的样式
+                          fab
+                          font-family: 'Font Awesome 5 Brands';
+
+                          fas
+                          font-family: 'Font Awesome 5 Free';
+                          font-weight: 900;
+
+              */
+              content: '\f1b0';
+              /* font-family: 'Font Awesome 5 Brands'; */
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              color: blue;
+              margin-right: 10px;
+          }
+      </style>
+  </head>
+  <body>
+  <!-- <i class="fas fa-cat"></i> -->
+  <ul>
+      <li>锄禾日当午</li>
+      <li>汗滴禾下土</li>
+      <li>谁知盘中餐</li>
+      <li>粒粒皆辛苦</li>
+  </ul>
+  <!--
+
+      通过实体来使用图标字体：
+          &#x图标的编码;
+  -->
+  <span class="fas">&#xf0f3;</span>
+  </body>
+  </html>
+```
+
+### 阿里字体库
+
+* [阿里字体库](https://www.iconfont.cn/)
+* 使用方式
+  1. ![打开阿里字体库](images/打开阿里字体库.png)
+  2. ![搜索需要的图标](images/搜索需要的图标.png)
+  3. ![将图标添加至购物车](images/将图标添加至购物车.png)
+  4. ![添加到项目](images/添加到项目.png)
+  5. ![下载至本地](images/下载至本地.png)
+  6. ![将里面的文件移入到项目](images/将里面的文件移入到项目.png)
+  7. 将CSS文件引入到页面：<link rel="stylesheet" href="./iconfont/iconfont.css">
+  8. 在需要使用图标的元素中添加类名：<i class="iconfont icon-xxx"></i>
+[使用阿里字体库](使用阿里字体库.html)
+![使用阿里字体库](images/使用阿里字体库.png)
+
 # 盒模型
 
 * CSS处理网页时，认为每个元素都包含在一个不可见的盒子里
