@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景颜色渐变</title>
+    <style>
+        .box{
+            margin-top: 10px;
+            width: 1000px;
+            height: 100px; 
+        }
+        .box1{
+            background: linear-gradient(red, yellow);
+        }
+        .box2{
+            background: linear-gradient(red 40%, yellow 60%);
+        }
+        .box3{
+            background: linear-gradient(red 10px, yellow 90px);
+        }
+        .box4{
+            background: linear-gradient(to right, red, yellow);
+        }
+        .box5{
+            background: linear-gradient(to right top, red, yellow);
+        }
+        .box6{
+            background: linear-gradient(0.8turn, red, yellow);
+        }
+        .box7{
+            background: linear-gradient(45deg, red, yellow);
+        }
+        .box8{
+            background: linear-gradient(45deg, red, yellow, green, pink);
+        }
+        .box9{
+            background: repeating-linear-gradient(to right, red, yellow 50%);
+        }
+        .box10{
+            background: radial-gradient(200px 100px, red , yellow, green);
+        }
+        .box11{
+            background: radial-gradient(circle, red , yellow, green);
+        }
+        .box12{
+            background: radial-gradient(ellipse, red , yellow, green);
+        }
+        .box13{
+            background: radial-gradient(closest-side, red , yellow, green);
+        }
+        .box14{
+            background: radial-gradient(closest-corner, red , yellow, green);
+        }
+        .box15{
+            background: radial-gradient(farthest-side, red , yellow, green);
+        }
+        .box16{
+            background: radial-gradient(farthest-corner, red , yellow, green);
+        }
+        .box17{
+            background: radial-gradient(farthest-corner at 100px 10px, red , yellow, green);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        linear-gradient(red, yellow)
+    </div>
+    <div class="box box2">
+        linear-gradient(red 40%, yellow 60%)
+    </div>
+    <div class="box box3">
+        background: linear-gradient(red 10px, yellow 90px);
+    </div>
+    <div class="box box4">
+        background: linear-gradient(to right, red, yellow);
+    </div> 
+    <div class="box box5">
+        background: linear-gradient(to right top, red, yellow);
+    </div> 
+    <div class="box box6">
+        background: linear-gradient(0.8turn, red, yellow);
+    </div>
+    <div class="box box7">
+       background: linear-gradient(45deg, red, yellow, green);
+    </div>
+    <div class="box box8">
+       background: linear-gradient(45deg, red, yellow, green, pink);
+    </div>
+    <div class="box box9">
+       background: repeating-linear-gradient(to right, red, yellow 50%);
+    </div>
+    <div class="box box10">
+       background: radial-gradient(100px 100px, red , yellow, green);
+    </div>
+    <div class="box box11">
+       background: radial-gradient(circle, red , yellow, green);
+    </div>
+    <div class="box box12">
+       background: radial-gradient(ellipse, red , yellow, green);
+    </div>
+    <div class="box box13">
+       background: radial-gradient(closest-side, red , yellow, green);
+    </div>
+    <div class="box box14">
+       background: radial-gradient(closest-corner, red , yellow, green);
+    </div>
+    <div class="box box15">
+       background: radial-gradient(farthest-side, red , yellow, green);
+    </div>
+    <div class="box box16">
+       background: radial-gradient(farthest-corner, red , yellow, green);
+    </div>
+    <div class="box box17">
+       background: radial-gradient(farthest-corner at 100px 10px, red , yellow, green);
+    </div>
+</body>
+</html>

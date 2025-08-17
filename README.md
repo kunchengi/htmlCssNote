@@ -2122,6 +2122,86 @@
 [背景有关样式](背景有关样式.html)
 ![背景有关样式](images/背景有关样式.png)
 
+## 渐变
+
+### 普通渐变
+
+* 渐变是图片，需要通过background-image来设置,也可以用background来设置
+* linear-gradient()
+  * 线性渐变，，颜色沿着一个方向发生变化
+  * linear-gradient(red,yellow) 红色向黄色过渡渐变
+  * 线性渐变的开头，我们可以指定一个渐变的方向
+    * to left 从右到左
+    * to right 从左到右
+    * to top 从下到上
+    * to bottom 从上到下
+    * 以上四个可以组合使用
+    * 渐变的方向可以是任意角度，比如：45deg
+    * turn 表示圈
+  * 渐变可以同时指定多个颜色，多个颜色默认情况下平均分布，也可以手动指定渐变的分布情况
+* repeating-linear-gradient()
+  * 重复线性渐变
+  * 重复线性渐变的语法和线性渐变的语法相同，只是重复线性渐变会自动重复渐变的颜色
+```css
+  .box {
+    /* 默认从上到下渐变 */
+    background: linear-gradient(red, yellow);
+    /* 手动指定渐变的分布情况 */
+    background: linear-gradient(red 40%, yellow 60%);
+    background: linear-gradient(red 200px, yellow 800px);
+    /* 指定一个渐变的方向 */
+    background: linear-gradient(to right, red, yellow);
+    /* 渐变的方向组合使用 */
+    background: linear-gradient(to right top, red, yellow);
+    /* 使用turn */
+    background: linear-gradient(0.25turn, red, yellow);
+    /* 渐变的方向可以是任意角度 */
+    background: linear-gradient(45deg, red, yellow, green);
+    /* 渐变可以同时指定多个颜色 */
+    background: linear-gradient(45deg, red, yellow, green, pink);
+    /* 重复线性渐变 */
+    background: repeating-linear-gradient(to right, red, yellow);
+  }
+```
+
+### 径向渐变
+
+* 径向渐变(放射性的效果)
+* radial-gradient()
+* 默认情况下径向渐变的形状根据元素的形状来计算的
+  * 正方形 --> 圆形
+  * 长方形 --> 椭圆形
+* 手动指定径向渐变的大小
+  * 传入两个值
+    * background: radial-gradient(100px 100px, red , yellow, green);
+  * circle
+    * 表示正圆
+    * background: radial-gradient(circle, red , yellow, green);
+  * ellipse
+    * 表示椭圆
+    * background: radial-gradient(ellipse, red , yellow, green);
+  * closest-side
+    * 近边，表示最近的边
+  * closest-corner
+    * 近角，表示最近的角
+  * farthest-side
+    * 远边，表示最远的边
+  * farthest-corner
+    * 远角，表示最远的角
+* 也可以指定渐变的位置
+  * 位置
+    * top right left center bottom
+    * background: radial-gradient(farthest-corner at 100px 100px, red , #bfa);
+```css
+  .box {
+    /* radial-gradient(大小 at 位置, 颜色 位置 ,颜色 位置 ,颜色 位置) */
+    background: radial-gradient(farthest-corner at 100px 10px, red , yellow, green);
+  }
+```
+[背景颜色渐变](背景颜色渐变.html)
+![背景颜色渐变1](images/背景颜色渐变1.png)
+![背景颜色渐变2](images/背景颜色渐变2.png)
+
 # 表格
 
 ## 表格简介
