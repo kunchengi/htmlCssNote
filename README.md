@@ -3016,3 +3016,84 @@
 [绝对定位元素的位置](绝对定位元素的位置.html)
 ![绝对定位元素的位置](images/绝对定位元素的位置.png)
 
+# 过渡效果
+
+* 通过过渡可以指定一个属性发生变化时的过度效果
+* transition-property
+  * 用来指定过渡的属性
+  * 可选值
+    * all
+      * 所有属性都过渡
+    * 属性名
+      * 只指定某个属性过渡
+    * none
+      * 没有属性过渡
+    * 多个属性名
+      * 多个属性过渡
+```css
+  .box{
+    transition-property: width,height;
+  }
+```
+* transition-duration
+  * 用来指定过渡的持续时间
+  * 可使用 s和ms
+  * 可以分别指定每个属性的过渡时间
+    * 多个属性名和多个时间用逗号隔开
+```css
+  .box{
+    transition-property: width,height,background-color;
+    transition-duration: 1s,2s,3s;
+  }
+```
+* transition-timing-function
+  * 用来指定过渡的时间函数
+  * 可选值
+    * ease
+      * 慢速开始，慢速结束，先加速，再减速
+    * linear
+      * 匀速
+    * ease-in
+      * 加速运动
+    * ease-out
+      * 减速运动
+    * ease-in-out
+      * 先加速，再减速
+    * cubic-bezier()
+      * 贝塞尔曲线函数
+      * https://cubic-bezier.com
+      * 可以自定义过渡的时间函数
+    * steps()
+      * 分步运动
+      * 第一个参数表示步数
+      * 第二个参数表示方向
+        * start
+          * 在时间开始时执行过渡
+        * end
+          * 在时间结束时执行过渡
+```css
+  .box{
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(.24,.95,.82,-0.88);
+    transition-timing-function: steps(2, start);
+  }
+```
+* transition-delay
+  * 用来指定过渡的延迟时间，等待一段时间后在执行过渡
+```css
+  .box{
+    transition-delay: 1s;
+  }
+```
+* transition
+  * 用来指定过渡的属性、时间、时间函数、延迟时间
+  * 多个值用空格隔开
+  * 每个属性的过渡时间、时间函数、延迟时间可以分别指定
+  * 如果要写延迟，则两个时间中第一个是持续时间，第二个是延迟时间
+```css
+  .box{
+    transition: width 1s ease 1s,height 2s ease 2s;
+  }
+```
+[过渡效果](过渡效果.html)
+![过渡效果](images/过渡效果.png)
