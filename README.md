@@ -2274,6 +2274,29 @@
     border-collapse: collapse;
   }
 ```
+
+* vertical-align
+  * 默认情况下元素在td中是垂直居中的
+  * 用来设置单元格的垂直对齐方式
+  * 取值
+    * top
+    * middle
+    * bottom
+```css
+  table {
+    vertical-align: middle;
+  }
+```
+
+* display: table-cell
+  * 用来将元素转换为表格单元格
+  * 可以设置单元格的宽度和高度
+```css
+  table {
+    display: table-cell;
+  }
+```
+
 [表格的样式](表格的样式.html)
 ![表格的样式](images/表格的样式.png)
 
