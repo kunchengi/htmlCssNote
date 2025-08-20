@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画效果</title>
+    <style>
+        /* 创建animation1关键帧 */
+        @keyframes animation1 {
+            0%{
+                margin-left: 0;
+                background-color: orange;
+            }
+            50%{
+                margin-left: 350px;
+                background-color: yellow;
+            }
+            100%{
+                margin-left: 700px;
+                background-color: red;
+            }
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 调用animation1关键帧 */
+            animation-name: animation1;
+            /* 动画播放次数 */
+            animation-iteration-count: 3;
+            /* 动画播放方向 */
+            animation-direction: alternate;
+            /* 动画播放速度 */
+            animation-timing-function: linear;
+            /* 动画延迟时间 */
+            animation-delay: 1s;
+            /* 动画结束后状态 */
+            animation-fill-mode: forwards;
+            /* 动画播放状态 */
+            animation-play-state: running;
+            /* 动画播放时间 */
+            animation-duration: 3s;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            animation: animation1 3s alternate cubic-bezier(.24,.95,.82,-0.88) 1s forwards 3;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            animation: animation1 3s alternate steps(3, start) 1s forwards 3;
+        }
+
+        /* 创建米兔奔跑关键帧 */
+        @keyframes mituRun {
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -396px 0;
+            }
+        }
+        .mitu{
+            height: 271px;
+            width: 132px;
+            margin: 0 auto;
+            background-image: url("images/bg/mitu.png") ;
+            background-position: 0 0;
+            animation: mituRun 1s steps(3, start) infinite;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="mitu"></div>
+</body>
+</html>

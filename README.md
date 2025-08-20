@@ -3097,3 +3097,159 @@
 ```
 [过渡效果](过渡效果.html)
 ![过渡效果](images/过渡效果.png)
+
+# 动画效果
+
+* 动画和过渡类似，都是可以实现一些动态的效果
+* 动画和过渡的区别
+  * 过渡需要在某个属性发生变化时才会触发
+  * 动画可以自动触发动态效果
+* 设置动画效果，必须先要设置一个关键帧，关键帧设置了动画执行每一个步骤
+* 关键帧
+  ```css
+    @keyframes animation1 {
+        from{
+            margin-left: 0;
+            background-color: orange;
+        }
+        to{
+            margin-left: 700px;
+            background-color: red;
+        }
+    }
+  ```
+  * animation1是关键帧的名字
+  * from表示动画的开始位置，也可以使用 0%
+  * to表示动画的结束位置，也可以使用 100%
+
+* animation-name
+  * 用来指定动画的关键帧名称
+```css
+  .box{
+    animation-name: animation1;
+  }
+```
+
+* animation-duration
+  * 用来指定动画的持续时间
+  * 可使用 s和ms
+```css
+  .box{
+    animation-duration: 1s;
+  }
+```
+
+* animation-delay
+  * 用来指定动画的延迟时间
+  * 可使用 s和ms
+```css
+  .box{
+    animation-delay: 1s;
+  }
+```
+
+* animation-timing-function
+  * 用来指定动画的时间函数
+  * 可选值
+    * ease
+      * 慢速开始，慢速结束，先加速，再减速
+    * linear
+      * 匀速
+    * ease-in
+      * 加速运动
+    * ease-out
+      * 减速运动
+    * ease-in-out
+      * 先加速，再减速
+    * cubic-bezier()
+      * 贝塞尔曲线函数
+      * https://cubic-bezier.com
+      * 可以自定义过渡的时间函数
+    * steps()
+      * 分步运动
+      * 第一个参数表示步数
+      * 第二个参数表示方向
+        * start
+          * 在时间开始时执行过渡
+        * end
+          * 在时间结束时执行过渡
+```css
+  .box{
+    animation-timing-function: ease;
+    animation-timing-function: cubic-bezier(.24,.95,.82,-0.88);
+    animation-timing-function: steps(2, start);
+  }
+```
+
+* animation-iteration-count
+  * 用来指定动画的重复次数
+  * 默认值是 1
+  * 这里的次数是单程次数，不是往返次数，往返记2次
+  * 可选值
+    * 数字
+      * 重复次数
+    * infinite
+      * 无限重复
+```css
+  .box{
+    animation-iteration-count: 2;
+  }
+```
+
+* animation-direction
+  * 用来指定动画的方向
+  * 可选值
+    * normal
+      * 默认值，从 from 向 to运行 每次都是这样
+    * reverse
+      * 从 to 向 from 运行 每次都是这样
+    * alternate
+      * 从 from 向 to往返执行
+    * alternate-reverse
+      * 从 to 向 from往返执行
+```css
+  .box{
+    animation-direction: alternate;
+  }
+```
+
+* animation-play-state
+  * 用来指定动画的播放状态
+  * 可选值
+    * running
+      * 运行
+    * paused
+      * 暂停
+```css
+  .box{
+    animation-play-state: paused;
+  }
+```
+
+* animation-fill-mode
+  * 用来指定动画结束后状态
+  * 可选值
+    * none
+      * 默认值，动画执行完毕后，元素回到初始状态
+    * forwards
+      * 动画执行完毕后，元素保持最后一帧的状态
+    * backwards
+      * 动画延时等待时，元素就会处于开始位置
+    * both
+      * 结合了forwards 和 backwards
+```css
+  .box{
+    animation-fill-mode: both;
+  }
+```
+
+* animation
+  * 可以同时设置动画相关的所有属性
+```css
+  .box{
+    animation: animation1 1s ease 1s 2 alternate;
+  }
+```
+[动画效果](动画效果.html)
+![动画效果](images/动画效果.png)
+
