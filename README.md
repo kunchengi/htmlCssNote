@@ -3270,3 +3270,54 @@
     * matrix()
       * 矩阵
     * 多个变形效果可以同时使用，但是必须要写在同一个属性中
+
+### 水平平移
+* translateX()
+  * 沿着x轴方向平移
+* translateY()
+  * 沿着y轴方向平移
+* translate()
+  * 同时设置x轴和y轴的平移
+* 百分比是相对于元素自身计算的
+```css
+  .box{
+    transform: translateX(100px) translateY(100px);
+    transform: translate(-50%, -50%);
+  }
+```
+
+* 使用变形平移将不确定大小的元素水平垂直居中
+```css
+  .box{
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+```
+
+### Z轴平移
+* translateZ()
+  * 沿着z轴方向平移
+```css
+  .box{
+    transform: translateZ(100px);
+  }
+```
+
+#### 视距
+
+* 调整元素在z轴的位置，正常情况就是调整元素和人眼之间的距离
+* 距离越大，元素离人越近
+* z轴平移属于立体效果（近大远小），默认情况下网页是不支持透视，如果需要看见效果，必须要设置网页的视距
+* perspective
+  * 视距
+  * 视距越大，元素离人越近
+  * 视距越小，元素离人越远
+* 视距设置在父元素上
+```css
+  .box{
+    perspective: 800px;
+  }
+```
+[平移](平移.html)
+![平移](images/平移.png)

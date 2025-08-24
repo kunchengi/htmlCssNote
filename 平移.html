@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平移</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .box1{
+            /* 平移 */
+            transform: translateX(100px) translateY(100px);
+        }
+        .box2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .box3{
+            width: 500px;
+            height: 500px;
+            margin-top: 200px;
+            background-color: red;
+            position: relative;
+            perspective: 800px;
+        }
+        .box3_1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .box3_1:hover{
+            transform: translate(-50%, -50%) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        transform: translate(100px, 100px);
+    </div>
+    <div class="box box2">
+        水平垂直居中
+    </div>
+    <div class="box3">
+        <div class="box box3_1">
+            沿着z轴方向平移
+        </div>
+    </div>
+</body>
+</html>
