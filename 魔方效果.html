@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔方效果</title>
+    <style>
+        html {
+            /*设置当前网页的视距为800px*/
+            perspective: 800px
+        }
+        body {
+            background-color: black;
+        }
+        .cube {
+            width: 200px;
+            height: 200px;
+            /*background-color: #019e8b;*/
+            margin: 500px auto;
+            /*开启3D效果*/
+            transform-style: preserve-3d;
+            /*旋转立方体*/
+            animation: rotate 20s infinite linear;
+            /*transform: rotateX(45deg) rotateZ(45deg);*/
+        }
+
+        .cube>div {
+            width: 200px;
+            height: 200px;
+            /*设置透明度*/
+            opacity: 0.9;
+            /*开启绝对定位,让每张图片重叠*/
+            position: absolute;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            /*取消图片的基线对齐*/
+            vertical-align: top;
+        }
+
+        /*左右两张图*/
+        .box1 {
+            /*y轴向右旋转90度,向右平移100px*/
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .box2 {
+            /*y轴向左旋转90度,向左平移100px*/
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        /*上下两张图*/
+        .box3 {
+            /*x轴向上旋转90度,向上平移100px*/
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .box4 {
+            /*X轴向下旋转90度,向下平移100px*/
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        /*前后两张图*/
+        .box5 {
+            /*Y轴向右旋转180度,向前平移100px*/
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .box6 {
+            /*Y轴向右旋转0度,向下平移100px*/
+            transform: rotateY(0deg) translateZ(100px);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(0) rotateZ(0);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个外部的容器 -->
+    <div class="cube">
+        <!-- 引入图片 -->
+        <div class="box1">
+            <img src="./images/mofang/blue.png">
+        </div>
+        <div class="box2">
+            <img src="./images/mofang/green.png">
+        </div>
+        <div class="box3">
+            <img src="./images/mofang/red.png">
+        </div>
+        <div class="box4">
+            <img src="./images/mofang/orange.png">
+        </div>
+        <div class="box5">
+            <img src="./images/mofang/yellow.png">
+        </div>
+        <div class="box6">
+            <img src="./images/mofang/white.png">
+        </div>
+    </div>
+</body>
+</html>

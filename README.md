@@ -3353,3 +3353,24 @@
 ```
 [旋转](旋转.html)
 ![旋转](images/旋转.png)
+
+## 开启3D空间
+
+* 开启3D空间
+  * 元素的子元素会开启3D空间
+  * 元素的子元素会受到3D空间的影响
+  * 元素的子元素会有3D空间的效果
+* transform-style
+  * 开启3D空间
+  * 可选值
+    * flat
+      * 默认值，不开启3D空间
+    * preserve-3d
+      * 开启3D空间
+```css
+  .box{
+    transform-style: preserve-3d;
+  }
+```
+[魔方效果](魔方效果.html)
+![魔方效果](images/魔方效果.png)
